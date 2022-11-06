@@ -12,7 +12,7 @@ import (
 type Banner struct {
 	Id        int       `json:"id"        description:"主键ID"`   // 主键ID
 	Url       string    `json:"url"       description:"轮播图地址"`  // 轮播图地址
-	JumpUrl   string    `json:"jumpUrl"   description:"跳转地址"`   // 跳转地址
+	JumpLink  string    `json:"jumpLink"  description:"跳转地址"`   // 跳转地址
 	Sort      int       `json:"sort"      description:"轮播图的排序"` // 轮播图的排序
 	CreatedAt time.Time `json:"createdAt" description:"创建时间"`   // 创建时间
 	UpdatedAt time.Time `json:"updatedAt" description:"更新时间"`   // 更新时间

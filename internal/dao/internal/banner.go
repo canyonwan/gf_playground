@@ -22,7 +22,7 @@ type BannerDao struct {
 type BannerColumns struct {
 	Id        string // 主键ID
 	Url       string // 轮播图地址
-	JumpUrl   string // 跳转地址
+	JumpLink  string // 跳转地址
 	Sort      string // 轮播图的排序
 	CreatedAt string // 创建时间
 	UpdatedAt string // 更新时间
@@ -32,7 +32,7 @@ type BannerColumns struct {
 var bannerColumns = BannerColumns{
 	Id:        "id",
 	Url:       "url",
-	JumpUrl:   "jumpUrl",
+	JumpLink:  "jump_link",
 	Sort:      "sort",
 	CreatedAt: "created_at",
 	UpdatedAt: "updated_at",
