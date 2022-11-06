@@ -23,7 +23,7 @@ func init() {
 	service.RegisterBanner(&sBanner{})
 }
 
-//
+// New()方法其实就是实例化对象
 //func New() *sBanner {
 //	return &sBanner{}
 //}
