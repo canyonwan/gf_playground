@@ -10,9 +10,11 @@ import (
 
 // Banner is the golang structure of table banner for DAO operations like Where/Data.
 type Banner struct {
-	g.Meta  `orm:"table:banner, do:true"`
-	Id      interface{} //
-	Url     interface{} //
-	JumpUrl interface{} //
-	Sort    interface{} //
+	g.Meta    `orm:"table:banner, do:true"`
+	Id        interface{} // 主键ID
+	Url       interface{} // 轮播图地址
+	JumpUrl   interface{} // 跳转地址
+	Sort      interface{} // 轮播图的排序
+	CreatedAt interface{} // 创建时间
+	UpdatedAt interface{} // 更新时间
 }

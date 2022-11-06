@@ -20,18 +20,22 @@ type BannerDao struct {
 
 // BannerColumns defines and stores column names for table banner.
 type BannerColumns struct {
-	Id      string //
-	Url     string //
-	JumpUrl string //
-	Sort    string //
+	Id        string // 主键ID
+	Url       string // 轮播图地址
+	JumpUrl   string // 跳转地址
+	Sort      string // 轮播图的排序
+	CreatedAt string // 创建时间
+	UpdatedAt string // 更新时间
 }
 
 // bannerColumns holds the columns for table banner.
 var bannerColumns = BannerColumns{
-	Id:      "id",
-	Url:     "url",
-	JumpUrl: "jumpUrl",
-	Sort:    "sort",
+	Id:        "id",
+	Url:       "url",
+	JumpUrl:   "jumpUrl",
+	Sort:      "sort",
+	CreatedAt: "created_at",
+	UpdatedAt: "updated_at",
 }
 
 // NewBannerDao creates and returns a new DAO object for table data access.
