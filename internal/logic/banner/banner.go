@@ -10,15 +10,23 @@ import (
 // 全局对象
 type sBanner struct{}
 
-// 自动调用的方法
+// 会在service层引入并自动调用该方法
 // 在里面进行服务注册
 func init() {
-	service.RegisterBanner(New())
+	// 将logic层当前的全局对象地址传给service层的注册方法进行注册
+	// 注: 注册方法(RegisterBanner)接收的是个IBanner的类型的接口
+	// - IBanner接口:为任何具有Create,GetSingle方法的类型,所有定义了Create,GetSingle这些方法的类型,我们称: 都实现了IBanner接口
+	// - 该接口里定义了2个方法,如果New()方法返回的结构体实现了注册方法(RegisterBanner)的接收的IBanner 接口类型
+	// - 那么我们说该结构体实现了该接口(IBanner)
+	// - 小知识: 接口定义了对象的行为, 具体的行为由对象决定
+	// 疑问: 这里的依赖注入, 是谁注入了谁啊
+	service.RegisterBanner(&sBanner{})
 }
 
-func New() *sBanner {
-	return &sBanner{}
-}
+//
+//func New() *sBanner {
+//	return &sBanner{}
+//}
 
 // Create 为sBanner添加方法
 func (s *sBanner) Create(ctx context.Context, in model.BannerCreateInput) (out *model.BannerCreateOutput, err error) {
