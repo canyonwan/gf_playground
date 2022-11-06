@@ -5,7 +5,6 @@ gfcli:
   gen:
     dao:
       - link: "mysql:root:123456@tcp(127.0.0.1:3306)/gf_db_demo"
-        #        tables: "user"
         jsonCase: "CamelLower"
         descriptionTag: true
         noModelComment: false
