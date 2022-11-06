@@ -21,10 +21,21 @@ func New() *sBanner {
 }
 
 // Create 为sBanner添加方法
-func (s *sBanner) Create(ctx context.Context, in model.BannerCreateInput) (out model.BannerCreateOutput, err error) {
+func (s *sBanner) Create(ctx context.Context, in model.BannerCreateInput) (out *model.BannerCreateOutput, err error) {
 	id, err := dao.Banner.Ctx(ctx).Data(in).InsertAndGetId()
 	if err != nil {
 		return out, err
 	}
-	return model.BannerCreateOutput{Id: int(id)}, nil
+	return &model.BannerCreateOutput{Id: int(id)}, nil
+}
+
+// GetSingle 为sBanner添加方法
+// 在logic层调用dao对象获取数据库里的数据并返回
+func (s *sBanner) GetSingle(ctx context.Context, in model.BannerGetInput) (out *model.BannerGetOutput, err error) {
+	var output = &model.BannerGetOutput{}
+	err = dao.Banner.Ctx(ctx).WherePri(in.Id).Scan(output)
+	if err != nil {
+		return nil, err
+	}
+	return output, nil
 }

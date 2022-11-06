@@ -30,6 +30,7 @@ var (
 				group.Bind(
 					controller.Hello,
 					controller.Banner,
+					controller.GetSingle,
 				)
 			})
 			s.Run()
