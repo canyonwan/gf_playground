@@ -5,14 +5,14 @@
 package entity
 
 import (
-	"time"
+	"github.com/gogf/gf/v2/os/gtime"
 )
 
 // Goods is the golang structure for table goods.
 type Goods struct {
-	Id          int       `json:"id"          description:"商品表id"` // 商品表id
-	Name        string    `json:"name"        description:"商品名称"`  // 商品名称
-	Description string    `json:"description" description:"商品描述"`  // 商品描述
-	CreateAt    time.Time `json:"createAt"    description:""`      //
-	UpdateAt    time.Time `json:"updateAt"    description:""`      //
+	Id          int         `json:"id"          description:"商品表id"` // 商品表id
+	Name        string      `json:"name"        description:"商品名称"`  // 商品名称
+	Description string      `json:"description" description:"商品描述"`  // 商品描述
+	CreateAt    *gtime.Time `json:"createAt"    description:""`      //
+	UpdateAt    *gtime.Time `json:"updateAt"    description:""`      //
 }

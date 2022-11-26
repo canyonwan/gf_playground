@@ -9,5 +9,5 @@ gfcli:
         descriptionTag: true
         noModelComment: false
         overwriteDao: true
-        stdTime: true
+        stdTime: false
         gJsonSupport: true

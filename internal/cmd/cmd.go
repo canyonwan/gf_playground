@@ -20,7 +20,7 @@ var (
 				s   = g.Server()
 				oai = s.GetOpenApi()
 			)
-			// OpenApi自定义信息
+			// OpenApi自定义信
 			oai.Info.Title = `Canyonwan的接口文档`
 			//oai.Config.CommonResponse = response.JsonRes{}
 			oai.Config.CommonResponseDataField = `Data`
@@ -28,9 +28,7 @@ var (
 			s.Group("/", func(group *ghttp.RouterGroup) {
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Bind(
-					controller.Hello,
 					controller.Banner,
-					controller.GetSingle,
 				)
 			})
 			s.Run()

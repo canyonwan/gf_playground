@@ -5,15 +5,15 @@
 package entity
 
 import (
-	"time"
+	"github.com/gogf/gf/v2/os/gtime"
 )
 
 // User is the golang structure for table user.
 type User struct {
-	Id       uint      `json:"id"       description:"User ID"`       // User ID
-	Passport string    `json:"passport" description:"User Passport"` // User Passport
-	Password string    `json:"password" description:"User Password"` // User Password
-	Nickname string    `json:"nickname" description:"User Nickname"` // User Nickname
-	CreateAt time.Time `json:"createAt" description:"Created Time"`  // Created Time
-	UpdateAt time.Time `json:"updateAt" description:"Updated Time"`  // Updated Time
+	Id       uint        `json:"id"       description:"User ID"`       // User ID
+	Passport string      `json:"passport" description:"User Passport"` // User Passport
+	Password string      `json:"password" description:"User Password"` // User Password
+	Nickname string      `json:"nickname" description:"User Nickname"` // User Nickname
+	CreateAt *gtime.Time `json:"createAt" description:"Created Time"`  // Created Time
+	UpdateAt *gtime.Time `json:"updateAt" description:"Updated Time"`  // Updated Time
 }

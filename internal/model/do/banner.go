@@ -6,6 +6,7 @@ package do
 
 import (
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
 )
 
 // Banner is the golang structure of table banner for DAO operations like Where/Data.
@@ -15,6 +16,7 @@ type Banner struct {
 	Url       interface{} // 轮播图地址
 	JumpLink  interface{} // 跳转地址
 	Sort      interface{} // 轮播图的排序
-	CreatedAt interface{} // 创建时间
-	UpdatedAt interface{} // 更新时间
+	CreatedAt *gtime.Time // 创建时间
+	UpdatedAt *gtime.Time // 更新时间
+	DeletedAt *gtime.Time // 删除时间
 }

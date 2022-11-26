@@ -26,6 +26,7 @@ type BannerColumns struct {
 	Sort      string // 轮播图的排序
 	CreatedAt string // 创建时间
 	UpdatedAt string // 更新时间
+	DeletedAt string // 删除时间
 }
 
 // bannerColumns holds the columns for table banner.
@@ -36,6 +37,7 @@ var bannerColumns = BannerColumns{
 	Sort:      "sort",
 	CreatedAt: "created_at",
 	UpdatedAt: "updated_at",
+	DeletedAt: "deleted_at",
 }
 
 // NewBannerDao creates and returns a new DAO object for table data access.

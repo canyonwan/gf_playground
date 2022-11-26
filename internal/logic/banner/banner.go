@@ -47,3 +47,11 @@ func (s *sBanner) GetSingle(ctx context.Context, in model.BannerGetInput) (out *
 	}
 	return output, nil
 }
+
+func (s *sBanner) DeleteSingle(ctx context.Context, in model.BannerGetInput) (out *model.BannerCreateOutput, err error) {
+	_, _ = dao.Banner.Ctx(ctx).WherePri(in.Id).Delete()
+	if err != nil {
+		return nil, err
+	}
+	return nil, nil
+}

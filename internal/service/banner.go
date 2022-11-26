@@ -14,6 +14,7 @@ type (
 	IBanner interface {
 		Create(ctx context.Context, in model.BannerCreateInput) (out *model.BannerCreateOutput, err error)
 		GetSingle(ctx context.Context, in model.BannerGetInput) (out *model.BannerGetOutput, err error)
+		DeleteSingle(ctx context.Context, in model.BannerGetInput) (out *model.BannerCreateOutput, err error)
 	}
 )
 

@@ -27,3 +27,10 @@ type GetBannerReq struct {
 type GetBannerRes struct {
 	*entity.Banner
 }
+
+type DeleteBannerReq struct {
+	g.Meta `path:"/banner/{id}" method:"delete" tags:"轮播图" summary:"删除单个轮播图"`
+	Id     int `json:"id" v:"required#轮播ID必传" dc:"轮播图主键ID"`
+}
+
+type DeleteBannerRes struct{}

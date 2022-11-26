@@ -6,7 +6,6 @@ import (
 	"gf_playground/internal/model"
 	"gf_playground/internal/model/entity"
 	"gf_playground/internal/service"
-	"time"
 )
 
 // ================================================================================
@@ -38,7 +37,7 @@ func (c *cBanner) Create(ctx context.Context, req *v1.CreateBannerReq) (res *v1.
 	return &v1.CreateBannerRes{Id: out.Id}, nil
 }
 
-func GetSingle(ctx context.Context, req *v1.GetBannerReq) (res *v1.GetBannerRes, err error) {
+func (c *cBanner) GetSingle(ctx context.Context, req *v1.GetBannerReq) (res *v1.GetBannerRes, err error) {
 	output, err := service.Banner().GetSingle(ctx, model.BannerGetInput{Id: req.Id})
 	if err != nil {
 		return nil, err
@@ -48,8 +47,18 @@ func GetSingle(ctx context.Context, req *v1.GetBannerReq) (res *v1.GetBannerRes,
 		Url:       output.Url,
 		JumpLink:  output.JumpLink,
 		Sort:      output.Sort,
-		CreatedAt: time.Time{},
-		UpdatedAt: time.Time{},
+		CreatedAt: &output.CreatedAt,
+		UpdatedAt: &output.UpdatedAt,
+		DeletedAt: &output.DeletedAt,
 	},
 	}, nil
+}
+
+func (c *cBanner) DeleteSingle(ctx context.Context, req *v1.DeleteBannerReq) (res *v1.DeleteBannerRes, err error) {
+	_, _ = service.Banner().DeleteSingle(ctx, model.BannerGetInput{Id: req.Id})
+	if err != nil {
+		return nil, err
+	}
+	return nil, nil
+
 }

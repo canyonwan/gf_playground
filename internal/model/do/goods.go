@@ -6,6 +6,7 @@ package do
 
 import (
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
 )
 
 // Goods is the golang structure of table goods for DAO operations like Where/Data.
@@ -14,6 +15,6 @@ type Goods struct {
 	Id          interface{} // 商品表id
 	Name        interface{} // 商品名称
 	Description interface{} // 商品描述
-	CreateAt    interface{} //
-	UpdateAt    interface{} //
+	CreateAt    *gtime.Time //
+	UpdateAt    *gtime.Time //
 }
