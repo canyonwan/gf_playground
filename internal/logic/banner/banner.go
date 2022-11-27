@@ -2,9 +2,12 @@ package banner
 
 import (
 	"context"
+	"fmt"
 	"gf_playground/internal/dao"
 	"gf_playground/internal/model"
 	"gf_playground/internal/service"
+	"github.com/gogf/gf/v2/database/gdb"
+	"github.com/gogf/gf/v2/frame/g"
 )
 
 // 全局对象
@@ -48,10 +51,11 @@ func (s *sBanner) GetSingle(ctx context.Context, in model.BannerGetInput) (out *
 	return output, nil
 }
 
-func (s *sBanner) DeleteSingle(ctx context.Context, in model.BannerGetInput) (out *model.BannerCreateOutput, err error) {
-	_, _ = dao.Banner.Ctx(ctx).WherePri(in.Id).Delete()
-	if err != nil {
-		return nil, err
-	}
-	return nil, nil
+func (s *sBanner) DeleteSingle(ctx context.Context, id int) error {
+	return dao.Banner.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+		a := g.Map{dao.Banner.Columns().Id: id}
+		fmt.Println("删除单个:%V", a)
+		_, err := dao.Banner.Ctx(ctx).Where(a).Delete()
+		return err
+	})
 }

@@ -55,10 +55,6 @@ func (c *cBanner) GetSingle(ctx context.Context, req *v1.GetBannerReq) (res *v1.
 }
 
 func (c *cBanner) DeleteSingle(ctx context.Context, req *v1.DeleteBannerReq) (res *v1.DeleteBannerRes, err error) {
-	_, _ = service.Banner().DeleteSingle(ctx, model.BannerGetInput{Id: req.Id})
-	if err != nil {
-		return nil, err
-	}
-	return nil, nil
-
+	err = service.Banner().DeleteSingle(ctx, req.Id)
+	return
 }

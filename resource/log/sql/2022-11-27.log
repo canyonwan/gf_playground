@@ -1,0 +1,27 @@
+2022-11-27 13:55:43.545 [DEBU] {88f9fc625d5b2b1760beb0446128e0dc} [ 20 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2022-11-27 13:55:43.588 [DEBU] {88f9fc625d5b2b1760beb0446128e0dc} [ 41 ms] [default] [gf_db_demo] [rows:1  ] UPDATE `banner` SET `deleted_at`='2022-11-27 13:55:43' WHERE (`id`=1) AND `deleted_at` IS NULL
+2022-11-27 13:56:52.543 [DEBU] {e0de4d746d5b2b1761beb0449db90f2f} [ 10 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=1) AND `deleted_at` IS NULL LIMIT 1
+2022-11-27 13:57:19.194 [DEBU] {28938fa8735b2b1762beb0447db3db1c} [ 16 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `banner`(`updated_at`,`url`,`jump_link`,`sort`,`created_at`,`deleted_at`) VALUES('2022-11-27 13:57:19','http://fppsvuy.ai/tngi','nostrud do laborum',47,'2022-11-27 13:57:19',null) 
+2022-11-27 16:17:40.574 [DEBU] {5074ba691c632b1724d8e9509286b9f2} [ 18 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2022-11-27 16:17:40.583 [DEBU] {5074ba691c632b1724d8e9509286b9f2} [  7 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=1) AND `deleted_at` IS NULL LIMIT 1
+2022-11-27 16:17:56.750 [DEBU] {a0bd532e20632b1725d8e950d7184368} [ 12 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=2) AND `deleted_at` IS NULL LIMIT 1
+2022-11-27 16:18:16.619 [DEBU] {6076c2ce24632b1726d8e9507afb30be} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=2) AND `deleted_at` IS NULL LIMIT 1
+2022-11-27 17:07:00.081 [DEBU] {58efa97acd652b177961da546b489ddb} [  9 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] BEGIN
+2022-11-27 17:07:00.088 [DEBU] {58efa97acd652b177961da546b489ddb} [  6 ms] [default] [gf_db_demo] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `banner`
+2022-11-27 17:07:00.093 [DEBU] {58efa97acd652b177961da546b489ddb} [  5 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] UPDATE `banner` SET `deleted_at`='2022-11-27 17:07:00' WHERE (`id`=1) AND `deleted_at` IS NULL
+2022-11-27 17:07:00.095 [DEBU] {58efa97acd652b177961da546b489ddb} [  2 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] COMMIT
+2022-11-27 17:07:11.740 [DEBU] {50f8d531d0652b177a61da54e6ca6bef} [  6 ms] [default] [gf_db_demo] [rows:0  ] [txid:2] BEGIN
+2022-11-27 17:07:11.745 [DEBU] {50f8d531d0652b177a61da54e6ca6bef} [  4 ms] [default] [gf_db_demo] [rows:1  ] [txid:2] UPDATE `banner` SET `deleted_at`='2022-11-27 17:07:11' WHERE (`id`=2) AND `deleted_at` IS NULL
+2022-11-27 17:07:11.749 [DEBU] {50f8d531d0652b177a61da54e6ca6bef} [  3 ms] [default] [gf_db_demo] [rows:0  ] [txid:2] COMMIT
+2022-11-27 17:07:20.500 [DEBU] {30d7883bd2652b177b61da54237b9c94} [ 12 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=2) AND `deleted_at` IS NULL LIMIT 1
+2022-11-27 17:19:05.107 [DEBU] {a00aba4976662b17a646eb12f5b9332c} [  7 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2022-11-27 17:19:05.119 [DEBU] {a00aba4976662b17a646eb12f5b9332c} [ 11 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `banner`(`updated_at`,`jump_link`,`deleted_at`,`url`,`sort`,`created_at`) VALUES('2022-11-27 17:19:05','nostrud do laborum',null,'http://fppsvuy.ai/tngi',47,'2022-11-27 17:19:05') 
+2022-11-27 17:19:11.622 [DEBU] {c8c1facd77662b17a746eb124a49f73b} [  8 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `banner`(`created_at`,`updated_at`,`deleted_at`,`url`,`jump_link`,`sort`) VALUES('2022-11-27 17:19:11','2022-11-27 17:19:11',null,'http://fppsvuy.ai/tngi','nostrud do laborum',47) 
+2022-11-27 17:19:12.838 [DEBU] {d066461678662b17a846eb127cb40b10} [ 12 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `banner`(`deleted_at`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`) VALUES(null,'http://fppsvuy.ai/tngi','nostrud do laborum',47,'2022-11-27 17:19:12','2022-11-27 17:19:12') 
+2022-11-27 17:19:35.700 [DEBU] {888e36697d662b17a946eb12f9b62f04} [  7 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] BEGIN
+2022-11-27 17:19:35.703 [DEBU] {888e36697d662b17a946eb12f9b62f04} [  2 ms] [default] [gf_db_demo] [rows:1  ] [txid:1] UPDATE `banner` SET `deleted_at`='2022-11-27 17:19:35' WHERE (`id`=3) AND `deleted_at` IS NULL
+2022-11-27 17:19:35.707 [DEBU] {888e36697d662b17a946eb12f9b62f04} [  4 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] COMMIT
+2022-11-27 17:21:09.101 [DEBU] {3809642893662b17986c7d509ecec850} [  5 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] BEGIN
+2022-11-27 17:21:09.105 [DEBU] {3809642893662b17986c7d509ecec850} [  4 ms] [default] [gf_db_demo] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `banner`
+2022-11-27 17:21:09.107 [DEBU] {3809642893662b17986c7d509ecec850} [  2 ms] [default] [gf_db_demo] [rows:1  ] [txid:1] UPDATE `banner` SET `deleted_at`='2022-11-27 17:21:09' WHERE (`id`=4) AND `deleted_at` IS NULL
+2022-11-27 17:21:09.112 [DEBU] {3809642893662b17986c7d509ecec850} [  5 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] COMMIT
