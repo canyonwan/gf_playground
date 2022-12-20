@@ -25,10 +25,11 @@ var (
 			//oai.Config.CommonResponse = response.JsonRes{}
 			oai.Config.CommonResponseDataField = `Data`
 
-			s.Group("/", func(group *ghttp.RouterGroup) {
+			s.Group("/v1", func(group *ghttp.RouterGroup) {
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Bind(
 					controller.Banner,
+					controller.DataStatistics,
 				)
 			})
 			s.Run()

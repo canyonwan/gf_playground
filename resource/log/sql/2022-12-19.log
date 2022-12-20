@@ -1,0 +1,4 @@
+2022-12-19 23:03:42.287 [DEBU] {20ab5e0d093a3217486e943ad0bbb4f1} [ 25 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2022-12-19 23:03:42.312 [DEBU] {20ab5e0d093a3217486e943ad0bbb4f1} [ 24 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=2) AND `deleted_at` IS NULL LIMIT 1
+2022-12-19 23:06:05.940 [DEBU] {f09122802a3a32174f743f1b37dd3b2b} [ 19 ms] [default] [gf_db_demo] [rows:5  ] SHOW FULL COLUMNS FROM `goods`
+2022-12-19 23:06:05.959 [DEBU] {f09122802a3a32174f743f1b37dd3b2b} [ 19 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `goods` WHERE (`create_at` BETWEEN '2022-12-19 00:00:00' AND '2022-12-19 23:59:59') AND (id)

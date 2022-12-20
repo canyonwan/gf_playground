@@ -8,7 +8,7 @@ import (
 // CreateBannerReq 新增轮播图
 type CreateBannerReq struct {
 	g.Meta   `path:"/banner" method:"post" tags:"轮播图" summary:"创建Banner"`
-	Url      string `json:"url" v:"required#轮播图地址必填" dc:"轮播图地址"`
+	Url      string `json:"url" v:"required#播图地址必填" dc:"轮播图地址"`
 	JumpLink string `json:"jumpLink" v:"required#跳转链接必填" dc:"跳转链接"`
 	Sort     int    `json:"sort" dc:"排序"`
 }

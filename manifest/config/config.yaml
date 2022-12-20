@@ -9,16 +9,17 @@ logger:
 
 # Database.
 database:
-  logger:
-    level:   "all"
-    stdout:  true
-    Path: "resource/log/sql"
-
   default:
-    link:   "mysql:root:123456@tcp(127.0.0.1:3306)/gf_db_demo"
+    link:   "mysql:root:123456@tcp(127.0.0.1:3306)/gf_db_demo?loc=Local"
     debug:  true
     charset: "utf8mb4" # 数据库编码
     dryRun: false # 空跑
     maxIdle: 10 # 连接池最大闲置的连接数
     maxOpen: 10 # 连接池最大打开的连接数
     maxLifetime: 30 # (单位秒)连接对象可重复使用的时间长度
+# 数据库日志
+  logger:
+    level:   "all"
+    stdout:  true
+    Path: "resource/log/sql"
+
