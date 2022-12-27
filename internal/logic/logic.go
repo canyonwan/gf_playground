@@ -7,4 +7,5 @@ package logic
 import (
 	_ "gf_playground/internal/logic/banner"
 	_ "gf_playground/internal/logic/data_statistics"
+	_ "gf_playground/internal/logic/todo"
 )

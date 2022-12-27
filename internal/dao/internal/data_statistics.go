@@ -11,14 +11,14 @@ import (
 	"github.com/gogf/gf/v2/frame/g"
 )
 
-// DataStatisticsDao is the data access object for table data_statistics.go.
+// DataStatisticsDao is the data access object for table data_statistics.
 type DataStatisticsDao struct {
 	table   string                // table is the underlying table name of the DAO.
 	group   string                // group is the database configuration group name of current DAO.
 	columns DataStatisticsColumns // columns contains all the column names of Table for convenient usage.
 }
 
-// DataStatisticsColumns defines and stores column names for table data_statistics.go.
+// DataStatisticsColumns defines and stores column names for table data_statistics.
 type DataStatisticsColumns struct {
 	Id               string // id
 	TodayOrderCounts string // 今日订单总数
@@ -26,7 +26,7 @@ type DataStatisticsColumns struct {
 	ConversionRate   string // 转化率
 }
 
-// dataStatisticsColumns holds the columns for table data_statistics.go.
+// dataStatisticsColumns holds the columns for table data_statistics.
 var dataStatisticsColumns = DataStatisticsColumns{
 	Id:               "id",
 	TodayOrderCounts: "today_order_counts",
@@ -38,7 +38,7 @@ var dataStatisticsColumns = DataStatisticsColumns{
 func NewDataStatisticsDao() *DataStatisticsDao {
 	return &DataStatisticsDao{
 		group:   "default",
-		table:   "data_statistics.go",
+		table:   "data_statistics",
 		columns: dataStatisticsColumns,
 	}
 }

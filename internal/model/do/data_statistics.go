@@ -8,9 +8,9 @@ import (
 	"github.com/gogf/gf/v2/frame/g"
 )
 
-// DataStatistics is the golang structure of table data_statistics.go for DAO operations like Where/Data.
+// DataStatistics is the golang structure of table data_statistics for DAO operations like Where/Data.
 type DataStatistics struct {
-	g.Meta           `orm:"table:data_statistics.go, do:true"`
+	g.Meta           `orm:"table:data_statistics, do:true"`
 	Id               interface{} // id
 	TodayOrderCounts interface{} // 今日订单总数
 	DAU              interface{} // 日活

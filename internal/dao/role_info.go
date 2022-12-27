@@ -8,19 +8,19 @@ import (
 	"gf_playground/internal/dao/internal"
 )
 
-// internalDataStatisticsDao is internal type for wrapping internal DAO implements.
-type internalDataStatisticsDao = *internal.DataStatisticsDao
+// internalRoleInfoDao is internal type for wrapping internal DAO implements.
+type internalRoleInfoDao = *internal.RoleInfoDao
 
-// dataStatisticsDao is the data access object for table data_statistics.
+// roleInfoDao is the data access object for table role_info.
 // You can define custom methods on it to extend its functionality as you wish.
-type dataStatisticsDao struct {
-	internalDataStatisticsDao
+type roleInfoDao struct {
+	internalRoleInfoDao
 }
 
 var (
-	// DataStatistics is globally public accessible object for table data_statistics operations.
-	DataStatistics = dataStatisticsDao{
-		internal.NewDataStatisticsDao(),
+	// RoleInfo is globally public accessible object for table role_info operations.
+	RoleInfo = roleInfoDao{
+		internal.NewRoleInfoDao(),
 	}
 )
 

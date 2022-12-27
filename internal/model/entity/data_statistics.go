@@ -4,7 +4,7 @@
 
 package entity
 
-// DataStatistics is the golang structure for table data_statistics.go.
+// DataStatistics is the golang structure for table data_statistics.
 type DataStatistics struct {
 	Id               int `json:"id"               description:"id"`     // id
 	TodayOrderCounts int `json:"todayOrderCounts" description:"今日订单总数"` // 今日订单总数

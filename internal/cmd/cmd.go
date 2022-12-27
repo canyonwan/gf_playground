@@ -30,6 +30,7 @@ var (
 				group.Bind(
 					controller.Banner,
 					controller.DataStatistics,
+					controller.CTodo,
 				)
 			})
 			s.Run()
