@@ -1,12 +1,20 @@
 package admin
 
-import "github.com/gogf/gf/v2/frame/g"
+import (
+	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
+)
 
+// TodoResBase 响应体
 type TodoResBase struct {
-	Title   string `json:"title"`
-	Content string `json:"content"`
+	Title     string      `json:"title" desc:"标题"`
+	Content   string      `json:"content" desc:"内容"`
+	CreatedAt *gtime.Time `json:"created_at" desc:"创建时间"`
+	UpdatedAt *gtime.Time `json:"updated_at" desc:"更新时间"`
+	DeletedAt *gtime.Time `json:"deleted_at" desc:"删除时间"`
 }
 
+// TodoReqBase 请求体
 type TodoReqBase struct {
 	Title   string `json:"title" desc:"标题" v:"required#标题不能为空"`
 	Content string `json:"content" desc:"内容" v:"required#内容不能为空"`
@@ -38,7 +46,7 @@ type TodoCreateRes struct {
 
 // TodoUpdateReq 编辑
 type TodoUpdateReq struct {
-	g.Meta `path:"admin/todo/:id" method:"put" tags:"待办事项" summary:"summary编辑待办" desc:"doc编辑待办"`
+	g.Meta `path:"admin/todo" method:"put" tags:"待办事项" summary:"summary编辑待办" desc:"doc编辑待办"`
 	Id     int `json:"id" desc:"id" v:"required#id不能为空"`
 	TodoReqBase
 }

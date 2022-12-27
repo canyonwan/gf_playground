@@ -302,3 +302,125 @@ Stack:
 28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
     /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_server_handler.go:132
 
+2022-12-27 23:13:26.386 [DEBU] {18a4f99635af34179a501b2055d67ade} [ 23 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2022-12-27 23:13:26.397 [ERRO] {18a4f99635af34179a501b2055d67ade} [  9 ms] [default] [gf_db_demo] [rows:0  ] INSERT INTO `todo`(`content`,`created_at`,`title`,`updated_at`) VALUES('dolore','2022-12-27 23:13:26','话持次','2022-12-27 23:13:26') 
+Error: Error 1265: Data truncated for column 'created_at' at row 1
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:674
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:135
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:451
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_insert.go:202
+8.  gf_playground/internal/logic/todo.(*sTodo).Create
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/todo/todo.go:28
+9.  gf_playground/internal/controller.(*cTodo).Create
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/controller/todo.go:31
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_server_handler.go:132
+
+2022-12-27 23:18:41.916 [DEBU] {08574a0e7faf3417a9958341386a89e8} [ 18 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2022-12-27 23:18:41.925 [ERRO] {08574a0e7faf3417a9958341386a89e8} [  8 ms] [default] [gf_db_demo] [rows:0  ] INSERT INTO `todo`(`title`,`content`,`created_at`,`id`,`updated_at`) VALUES('则十集造术太治','velit exercitation ex dolore','2022-12-27 23:18:41',63,'2022-12-27 23:18:41') 
+Error: Error 1265: Data truncated for column 'created_at' at row 1
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:674
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:135
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:451
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_insert.go:202
+8.  gf_playground/internal/logic/todo.(*sTodo).Update
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/todo/todo.go:37
+9.  gf_playground/internal/controller.(*cTodo).Update
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/controller/todo.go:44
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+16. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_handler_response.go:25
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+22. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_tracing.go:78
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:96
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:95
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_server_handler.go:132
+
