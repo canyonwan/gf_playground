@@ -15,6 +15,11 @@ func init() {
 	service.RegisterTodo(&sTodo{})
 }
 
+func (s *sTodo) GetList(ctx context.Context) (out *model.TodoListGetOutput, err error) {
+	err = dao.Todo.Ctx(ctx).OrderAsc(dao.Todo.Columns().Id).Scan(&out.List)
+	return
+}
+
 func (s *sTodo) GetPage(ctx context.Context, in model.TodoPageGetInput) (out *model.TodoPageGetOutput, err error) {
 	// m = *gdb.Model 获取数据库操作对象
 	var m = dao.Todo.Ctx(ctx)

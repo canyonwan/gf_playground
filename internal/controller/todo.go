@@ -14,6 +14,15 @@ var (
 
 type cTodo struct{}
 
+func (ct *cTodo) GetList(ctx context.Context, req *app.TodoListGetReq) (res *app.TodoListGetRes, err error) {
+	//res = &app.TodoListGetRes{}
+	out, err := service.Todo().GetList(ctx)
+	if err != nil {
+		return nil, err
+	}
+	return &app.TodoListGetRes{List: out.List}, err
+}
+
 func (ct *cTodo) GetPage(ctx context.Context, req *app.TodoPageGetReq) (res *app.TodoPageGetRes, err error) {
 	out, err := service.Todo().GetPage(ctx, model.TodoPageGetInput{
 		Page: req.Page,

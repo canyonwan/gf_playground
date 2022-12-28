@@ -23,13 +23,21 @@ type TodoReqBase struct {
 
 // TodoPageGetReq 列表分页req
 type TodoPageGetReq struct {
-	g.Meta `path:"app/todo" method:"get" tags:"待办事项" summary:"列表"`
+	g.Meta `path:"app/todo/page" method:"get" tags:"待办事项" summary:"分页列表"`
 	common.PageCommonReq
 }
 
 // TodoPageGetRes 列表分页res
 type TodoPageGetRes struct {
 	common.PageCommonRes
+}
+
+// TodoListGetReq 不分页 列表
+type TodoListGetReq struct {
+	g.Meta `path:"app/todo/list" method:"get" tags:"待办事项" summary:"列表"`
+}
+type TodoListGetRes struct {
+	List interface{} `json:"list" dc:"列表"`
 }
 
 // TodoCreateReq 新增

@@ -30,6 +30,14 @@ type TodoPageGetOutput struct {
 	Total   int            `json:"total"`
 }
 
+// TodoListGetInput 获取
+type TodoListGetInput struct{}
+
+// TodoListGetOutput 获取
+type TodoListGetOutput struct {
+	List []TodoItemBase `json:"list"`
+}
+
 // TodoCreateInput 新增
 type TodoCreateInput struct {
 	TodoOutputBase

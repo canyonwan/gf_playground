@@ -12,6 +12,7 @@ import (
 
 type (
 	ITodo interface {
+		GetList(ctx context.Context) (out *model.TodoListGetOutput, err error)
 		GetPage(ctx context.Context, in model.TodoPageGetInput) (out *model.TodoPageGetOutput, err error)
 		Create(ctx context.Context, in *model.TodoCreateInput) (out *model.TodoCreateOutput, err error)
 		Update(ctx context.Context, in model.TodoUpdateInput) (err error)
