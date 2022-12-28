@@ -33,10 +33,12 @@ func init() {
 
 // Create 为sBanner添加方法
 func (s *sBanner) Create(ctx context.Context, in model.BannerCreateInput) (out *model.BannerCreateOutput, err error) {
+	// 1.处理逻辑
 	id, err := dao.Banner.Ctx(ctx).Data(in).InsertAndGetId()
 	if err != nil {
 		return out, err
 	}
+	// 2.返回结果给service层, 再由service层返回给controller层, 再由controller层返回给客户端
 	return &model.BannerCreateOutput{Id: int(id)}, nil
 }
 

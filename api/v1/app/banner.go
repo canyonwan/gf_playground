@@ -1,4 +1,4 @@
-package v1
+package app
 
 import (
 	"gf_playground/internal/model/entity"
