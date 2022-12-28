@@ -20,7 +20,7 @@ func (ct *cTodo) GetList(ctx context.Context, req *app.TodoListGetReq) (res *app
 	if err != nil {
 		return nil, err
 	}
-	return &app.TodoListGetRes{List: out.List}, err
+	return &app.TodoListGetRes{List: out.List}, nil
 }
 
 func (ct *cTodo) GetPage(ctx context.Context, req *app.TodoPageGetReq) (res *app.TodoPageGetRes, err error) {

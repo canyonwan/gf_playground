@@ -16,8 +16,21 @@ func init() {
 }
 
 func (s *sTodo) GetList(ctx context.Context) (out *model.TodoListGetOutput, err error) {
+	// 先实例化地址 否则会报空指针
+	// todo 为什么会报空指针
+	out = &model.TodoListGetOutput{}
 	err = dao.Todo.Ctx(ctx).OrderAsc(dao.Todo.Columns().Id).Scan(&out.List)
 	return
+
+	//return
+	// 先实例化地址 否则会报空指针
+	// todo 为什么会报空指针
+	//out = &model.TodoListGetOutput{}
+	//err = dao.Todo.Ctx(ctx).OrderAsc(dao.Todo.Columns().Id).Scan(&out.List)
+	//if err != nil {
+	//	return nil, err
+	//}
+	//return out, nil
 }
 
 func (s *sTodo) GetPage(ctx context.Context, in model.TodoPageGetInput) (out *model.TodoPageGetOutput, err error) {
