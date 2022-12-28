@@ -6,6 +6,7 @@ package do
 
 import (
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
 )
 
 // Todo is the golang structure of table todo for DAO operations like Where/Data.
@@ -14,7 +15,7 @@ type Todo struct {
 	Id        interface{} // id
 	Title     interface{} // 标题
 	Content   interface{} // 详细内容
-	CreatedAt interface{} // 创建时间
-	UpdatedAt interface{} // 更新时间
-	DeletedAt interface{} // 删除时间
+	CreatedAt *gtime.Time // 创建时间
+	UpdatedAt *gtime.Time // 更新时间
+	DeletedAt *gtime.Time // 删除时间
 }

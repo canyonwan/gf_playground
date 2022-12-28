@@ -9,9 +9,9 @@ type TodoItemBase struct {
 type TodoOutputBase struct {
 	Title     string
 	Content   string
-	CreatedAt *gtime.Time
-	UpdatedAt *gtime.Time
-	DeletedAt *gtime.Time
+	CreatedAt gtime.Time
+	UpdatedAt gtime.Time
+	DeletedAt gtime.Time
 }
 
 // TodoGetInput 获取
@@ -23,7 +23,7 @@ type TodoGetOutput struct {
 
 // TodoCreateInput 新增
 type TodoCreateInput struct {
-	TodoItemBase
+	TodoOutputBase
 }
 type TodoCreateOutput struct {
 	Id int
@@ -32,7 +32,7 @@ type TodoCreateOutput struct {
 // TodoUpdateInput 编辑
 type TodoUpdateInput struct {
 	Id int
-	TodoItemBase
+	TodoOutputBase
 }
 type TodoUpdateOutput struct {
 	Id int

@@ -4,12 +4,16 @@
 
 package entity
 
+import (
+	"github.com/gogf/gf/v2/os/gtime"
+)
+
 // Todo is the golang structure for table todo.
 type Todo struct {
-	Id        int    `json:"id"        description:"id"`   // id
-	Title     string `json:"title"     description:"标题"`   // 标题
-	Content   string `json:"content"   description:"详细内容"` // 详细内容
-	CreatedAt int    `json:"createdAt" description:"创建时间"` // 创建时间
-	UpdatedAt int    `json:"updatedAt" description:"更新时间"` // 更新时间
-	DeletedAt int    `json:"deletedAt" description:"删除时间"` // 删除时间
+	Id        int         `json:"id"        description:"id"`   // id
+	Title     string      `json:"title"     description:"标题"`   // 标题
+	Content   string      `json:"content"   description:"详细内容"` // 详细内容
+	CreatedAt *gtime.Time `json:"createdAt" description:"创建时间"` // 创建时间
+	UpdatedAt *gtime.Time `json:"updatedAt" description:"更新时间"` // 更新时间
+	DeletedAt *gtime.Time `json:"deletedAt" description:"删除时间"` // 删除时间
 }

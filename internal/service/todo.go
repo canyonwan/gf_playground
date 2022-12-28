@@ -12,10 +12,10 @@ import (
 
 type (
 	ITodo interface {
-		Get(ctx context.Context) (out model.TodoGetOutput, err error)
-		Create(ctx context.Context, in model.TodoCreateInput) (out model.TodoCreateOutput, err error)
-		Update(ctx context.Context, in model.TodoUpdateInput) (out model.TodoUpdateOutput, err error)
-		Delete(ctx context.Context, in model.TodoDeleteInput) (err error)
+		Get(context.Context) (out model.TodoGetOutput, err error)
+		Create(ctx context.Context, in *model.TodoCreateInput) (out *model.TodoCreateOutput, err error)
+		Update(ctx context.Context, in model.TodoUpdateInput) (err error)
+		Delete(ctx context.Context, id int) (err error)
 	}
 )
 
