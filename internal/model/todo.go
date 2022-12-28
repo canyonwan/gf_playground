@@ -3,22 +3,31 @@ package model
 import "github.com/gogf/gf/v2/os/gtime"
 
 type TodoItemBase struct {
-	Title   string
-	Content string
+	Id        int        `json:"id"`
+	Title     string     `json:"title"`
+	Content   string     `json:"content"`
+	CreatedAt gtime.Time `json:"created_at"`
+	UpdatedAt gtime.Time `json:"updated_at"`
+	DeletedAt gtime.Time `json:"deleted_at"`
 }
 type TodoOutputBase struct {
-	Title     string
-	Content   string
-	CreatedAt gtime.Time
-	UpdatedAt gtime.Time
-	DeletedAt gtime.Time
+	Title     string     `json:"title"`
+	Content   string     `json:"content"`
+	CreatedAt gtime.Time `json:"created_at"`
+	UpdatedAt gtime.Time `json:"updated_at"`
+	DeletedAt gtime.Time `json:"deleted_at"`
 }
 
-// TodoGetInput 获取
-type TodoGetInput struct{}
-type TodoGetOutput struct {
-	Id int
-	TodoOutputBase
+// TodoPageGetInput 获取
+type TodoPageGetInput struct {
+	Page int `json:"page"`
+	Size int `json:"size"`
+}
+type TodoPageGetOutput struct {
+	Page    int            `json:"page"`
+	Size    int            `json:"size"`
+	Content []TodoItemBase `json:"content"`
+	Total   int            `json:"total"`
 }
 
 // TodoCreateInput 新增
@@ -31,12 +40,9 @@ type TodoCreateOutput struct {
 
 // TodoUpdateInput 编辑
 type TodoUpdateInput struct {
-	Id int
-	TodoOutputBase
+	TodoItemBase
 }
-type TodoUpdateOutput struct {
-	Id int
-}
+type TodoUpdateOutput struct{}
 
 // TodoDeleteInput 删除
 type TodoDeleteInput struct {

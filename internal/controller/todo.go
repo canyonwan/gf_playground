@@ -3,6 +3,7 @@ package controller
 import (
 	"context"
 	"gf_playground/api/v1/app"
+	"gf_playground/api/v1/common"
 	"gf_playground/internal/model"
 	"gf_playground/internal/service"
 )
@@ -13,18 +14,22 @@ var (
 
 type cTodo struct{}
 
-func (ct *cTodo) Get(ctx context.Context, req *app.TodoGetReq) (res *app.TodoGetRes, err error) {
-	out, err := service.Todo().Get(ctx)
+func (ct *cTodo) GetPage(ctx context.Context, req *app.TodoPageGetReq) (res *app.TodoPageGetRes, err error) {
+	out, err := service.Todo().GetPage(ctx, model.TodoPageGetInput{
+		Page: req.Page,
+		Size: req.Size,
+	})
 	if err != nil {
 		return nil, err
 	}
-	return &app.TodoGetRes{
-		Id: out.Id,
-		TodoResBase: app.TodoResBase{
-			Title:   out.Title,
+	return &app.TodoPageGetRes{
+		PageCommonRes: common.PageCommonRes{
+			Page:    out.Page,
+			Size:    out.Size,
 			Content: out.Content,
+			Total:   out.Total,
 		},
-	}, err
+	}, nil
 }
 
 func (ct *cTodo) Create(ctx context.Context, req *app.TodoCreateReq) (res *app.TodoCreateRes, err error) {
@@ -42,8 +47,8 @@ func (ct *cTodo) Create(ctx context.Context, req *app.TodoCreateReq) (res *app.T
 
 func (ct *cTodo) Update(ctx context.Context, req *app.TodoUpdateReq) (res *app.TodoUpdateRes, err error) {
 	err = service.Todo().Update(ctx, model.TodoUpdateInput{
-		Id: req.Id,
-		TodoOutputBase: model.TodoOutputBase{
+		TodoItemBase: model.TodoItemBase{
+			Id:      req.Id,
 			Title:   req.Title,
 			Content: req.Content,
 		},

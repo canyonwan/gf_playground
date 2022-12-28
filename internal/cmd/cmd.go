@@ -27,6 +27,7 @@ var (
 
 			s.Group("/v1", func(group *ghttp.RouterGroup) {
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
+				group.Middleware(ghttp.MiddlewareCORS)
 				group.Bind(
 					controller.Banner,
 					controller.DataStatistics,

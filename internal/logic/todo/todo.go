@@ -4,6 +4,7 @@ import (
 	"context"
 	"gf_playground/internal/dao"
 	"gf_playground/internal/model"
+	"gf_playground/internal/model/entity"
 	"gf_playground/internal/service"
 	"github.com/gogf/gf/v2/frame/g"
 )
@@ -14,15 +15,30 @@ func init() {
 	service.RegisterTodo(&sTodo{})
 }
 
-func (s *sTodo) Get(context.Context) (out model.TodoGetOutput, err error) {
-	return model.TodoGetOutput{
-		Id: out.Id,
-		TodoOutputBase: model.TodoOutputBase{
-			Title:   out.Title,
-			Content: out.Content,
-		},
-	}, err
+func (s *sTodo) GetPage(ctx context.Context, in model.TodoPageGetInput) (out *model.TodoPageGetOutput, err error) {
+	// m = *gdb.Model 获取数据库操作对象
+	var m = dao.Todo.Ctx(ctx)
+	out = &model.TodoPageGetOutput{
+		Page: in.Page,
+		Size: in.Size,
+	}
+	listModel := m.Page(in.Page, in.Size)
 
+	var list []*entity.Todo
+	if err := listModel.Scan(&list); err != nil {
+		return out, err
+	}
+
+	// 没有数据
+	if len(list) == 0 {
+		return out, nil
+	}
+	// 有数据 获取总数
+	out.Total, err = m.Count()
+	if err := listModel.Scan(&out.Content); err != nil {
+		return out, err
+	}
+	return
 }
 
 func (s *sTodo) Create(ctx context.Context, in *model.TodoCreateInput) (out *model.TodoCreateOutput, err error) {
