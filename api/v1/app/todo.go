@@ -18,7 +18,7 @@ type TodoResBase struct {
 // TodoReqBase 请求体
 type TodoReqBase struct {
 	Title   string `json:"title" dc:"标题" v:"required#标题不能为空"`
-	Content string `json:"content" dc:"内容" v:"required#内容不能为空"`
+	Content string `json:"content" dc:"内容"`
 }
 
 // TodoPageGetReq 列表分页req
