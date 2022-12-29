@@ -811,3 +811,6 @@ Stack:
 2022-12-28 22:35:22.085 [DEBU] {60a5684db6fb3417b7dbc52feea54bb8} [  7 ms] [default] [gf_db_demo] [rows:5  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
 2022-12-28 22:35:53.435 [DEBU] {18057f9abdfb34174762647b15baf114} [ 14 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
 2022-12-28 22:35:53.443 [DEBU] {18057f9abdfb34174762647b15baf114} [  8 ms] [default] [gf_db_demo] [rows:5  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
+2022-12-28 22:55:49.518 [DEBU] {00457316d4fc34170e903c26d43615cc} [ 16 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2022-12-28 22:55:49.551 [DEBU] {00457316d4fc34170e903c26d43615cc} [ 31 ms] [default] [gf_db_demo] [rows:5  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL LIMIT 0,10
+2022-12-28 22:55:49.564 [DEBU] {00457316d4fc34170e903c26d43615cc} [ 13 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `todo` WHERE `deleted_at` IS NULL
