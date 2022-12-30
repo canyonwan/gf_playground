@@ -1,16 +1,13 @@
 package model
 
-import "github.com/gogf/gf/v2/os/gtime"
+import (
+	"gf_playground/internal/model/entity"
+	"github.com/gogf/gf/v2/os/gtime"
+)
 
-type TodoItemBase struct {
-	Id        int        `json:"id"`
-	Title     string     `json:"title"`
-	Content   string     `json:"content"`
-	CreatedAt gtime.Time `json:"created_at"`
-	UpdatedAt gtime.Time `json:"updated_at"`
-	DeletedAt gtime.Time `json:"deleted_at"`
-}
-type TodoOutputBase struct {
+// TodoItemBase Model层的json也要写 否则被controller层返回给客户端的时候将会是大写
+
+type TodoItemOutputBase struct {
 	Title     string     `json:"title"`
 	Content   string     `json:"content"`
 	CreatedAt gtime.Time `json:"created_at"`
@@ -23,24 +20,18 @@ type TodoPageGetInput struct {
 	Page int `json:"page"`
 	Size int `json:"size"`
 }
-type TodoPageGetOutput struct {
-	Page    int            `json:"page"`
-	Size    int            `json:"size"`
-	Content []TodoItemBase `json:"content"`
-	Total   int            `json:"total"`
-}
 
 // TodoListGetInput 获取
 type TodoListGetInput struct{}
 
 // TodoListGetOutput 获取
 type TodoListGetOutput struct {
-	List []TodoItemBase `json:"list"`
+	List []*entity.Todo `json:"list"`
 }
 
 // TodoCreateInput 新增
 type TodoCreateInput struct {
-	TodoOutputBase
+	TodoItemOutputBase
 }
 type TodoCreateOutput struct {
 	Id int
@@ -48,7 +39,8 @@ type TodoCreateOutput struct {
 
 // TodoUpdateInput 编辑
 type TodoUpdateInput struct {
-	TodoItemBase
+	Id int `json:"id"`
+	TodoItemOutputBase
 }
 type TodoUpdateOutput struct{}
 

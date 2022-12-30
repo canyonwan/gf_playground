@@ -43,7 +43,7 @@ func (ct *cTodo) GetPage(ctx context.Context, req *app.TodoPageGetReq) (res *app
 
 func (ct *cTodo) Create(ctx context.Context, req *app.TodoCreateReq) (res *app.TodoCreateRes, err error) {
 	out, err := service.Todo().Create(ctx, &model.TodoCreateInput{
-		TodoOutputBase: model.TodoOutputBase{
+		TodoItemOutputBase: model.TodoItemOutputBase{
 			Title:   req.Title,
 			Content: req.Content,
 		},
@@ -56,8 +56,8 @@ func (ct *cTodo) Create(ctx context.Context, req *app.TodoCreateReq) (res *app.T
 
 func (ct *cTodo) Update(ctx context.Context, req *app.TodoUpdateReq) (res *app.TodoUpdateRes, err error) {
 	err = service.Todo().Update(ctx, model.TodoUpdateInput{
-		TodoItemBase: model.TodoItemBase{
-			Id:      req.Id,
+		Id: req.Id,
+		TodoItemOutputBase: model.TodoItemOutputBase{
 			Title:   req.Title,
 			Content: req.Content,
 		},

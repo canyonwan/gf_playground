@@ -8,7 +8,7 @@ type PageCommonReq struct {
 
 type PageCommonRes struct {
 	Content interface{} `json:"content" dc:"列表"`
-	//Content []model.TodoItemBase `json:"content" dc:"列表"`
+	//Content []model.TodoItemOutputBase `json:"content" dc:"列表"`
 	Page  int `json:"page" dc:"页码"`
 	Size  int `json:"size" dc:"页数"`
 	Total int `json:"total" dc:"总数"`
