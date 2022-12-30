@@ -1,6 +1,7 @@
 package model
 
 import (
+	"gf_playground/api/v1/common"
 	"gf_playground/internal/model/entity"
 	"github.com/gogf/gf/v2/os/gtime"
 )
@@ -19,6 +20,11 @@ type TodoItemOutputBase struct {
 type TodoPageGetInput struct {
 	Page int `json:"page"`
 	Size int `json:"size"`
+}
+
+// TodoPageGetOutput 获取
+type TodoPageGetOutput struct {
+	common.PageCommonRes
 }
 
 // TodoListGetInput 获取

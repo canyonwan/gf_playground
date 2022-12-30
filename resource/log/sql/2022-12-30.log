@@ -36,3 +36,21 @@
 2022-12-30 18:12:00.970 [DEBU] {f84f5772808a35174c979429a2098b84} [ 53 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
 2022-12-30 19:36:17.689 [DEBU] {7876a1cf198f35174d979429765e372d} [ 30 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
 2022-12-30 19:52:43.587 [DEBU] {b8b9415cff8f35174e9794296fb6a39e} [ 21 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
+2022-12-30 22:40:06.062 [DEBU] {6880f78621993517c5f3693d6d36f4da} [145 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2022-12-30 22:40:06.082 [DEBU] {6880f78621993517c5f3693d6d36f4da} [ 18 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL LIMIT 0,10
+2022-12-30 22:40:06.098 [DEBU] {6880f78621993517c5f3693d6d36f4da} [ 15 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `todo` WHERE `deleted_at` IS NULL
+2022-12-30 22:40:12.465 [DEBU] {a8923d0b23993517c6f3693d438c3859} [ 35 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL LIMIT 0,10
+2022-12-30 22:40:12.489 [DEBU] {a8923d0b23993517c6f3693d438c3859} [ 23 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `todo` WHERE `deleted_at` IS NULL
+2022-12-30 22:40:56.897 [DEBU] {f03de0602d993517744a47447f054bc3} [ 78 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2022-12-30 22:40:56.914 [DEBU] {f03de0602d993517744a47447f054bc3} [ 15 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL LIMIT 0,10
+2022-12-30 22:40:56.932 [DEBU] {f03de0602d993517744a47447f054bc3} [ 17 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `todo` WHERE `deleted_at` IS NULL
+2022-12-30 22:41:51.111 [DEBU] {7010d5023a993517f979a926413de9d4} [ 34 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2022-12-30 22:41:51.135 [DEBU] {7010d5023a993517f979a926413de9d4} [ 23 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL LIMIT 0,10
+2022-12-30 22:41:51.154 [DEBU] {7010d5023a993517f979a926413de9d4} [ 17 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `todo` WHERE `deleted_at` IS NULL
+2022-12-30 22:42:38.296 [DEBU] {5038f4fd4499351796765900cafec105} [ 57 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2022-12-30 22:42:38.309 [DEBU] {5038f4fd4499351796765900cafec105} [ 12 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL LIMIT 0,10
+2022-12-30 22:42:38.321 [DEBU] {5038f4fd4499351796765900cafec105} [ 11 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `todo` WHERE `deleted_at` IS NULL
+2022-12-30 22:42:38.331 [DEBU] {5038f4fd4499351796765900cafec105} [ 10 ms] [default] [gf_db_demo] [rows:3  ] SELECT `content` FROM `todo` WHERE `deleted_at` IS NULL LIMIT 0,10
+2022-12-30 22:43:55.163 [DEBU] {e8bf04e4569935176848674da8dfbb26} [ 48 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2022-12-30 22:43:55.196 [DEBU] {e8bf04e4569935176848674da8dfbb26} [ 30 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL LIMIT 0,10
+2022-12-30 22:43:55.217 [DEBU] {e8bf04e4569935176848674da8dfbb26} [ 20 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `todo` WHERE `deleted_at` IS NULL

@@ -2,9 +2,10 @@ package todo
 
 import (
 	"context"
+	"fmt"
 	"gf_playground/api/v1/common"
 	"gf_playground/internal/dao"
-	"gf_playground/internal/model"
+	model "gf_playground/internal/model"
 	"gf_playground/internal/model/entity"
 	"gf_playground/internal/service"
 	"github.com/gogf/gf/v2/frame/g"
@@ -34,12 +35,14 @@ func (s *sTodo) GetList(ctx context.Context) (out *model.TodoListGetOutput, err 
 	//return out, nil
 }
 
-func (s *sTodo) GetPage(ctx context.Context, in model.TodoPageGetInput) (out *common.PageCommonRes, err error) {
+func (s *sTodo) GetPage(ctx context.Context, in model.TodoPageGetInput) (out *model.TodoPageGetOutput, err error) {
 	// m = *gdb.Model 获取数据库操作对象
 	var m = dao.Todo.Ctx(ctx)
-	out = &common.PageCommonRes{
-		Page: in.Page,
-		Size: in.Size,
+	out = &model.TodoPageGetOutput{
+		PageCommonRes: common.PageCommonRes{
+			Page: in.Page,
+			Size: in.Size,
+		},
 	}
 	listModel := m.Page(in.Page, in.Size)
 
@@ -54,6 +57,7 @@ func (s *sTodo) GetPage(ctx context.Context, in model.TodoPageGetInput) (out *co
 	}
 	// 有数据 获取总数
 	out.Total, err = m.Count()
+	fmt.Println("out", out)
 	if err := listModel.Scan(&out.Content); err != nil {
 		return out, err
 	}
