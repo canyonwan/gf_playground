@@ -27,7 +27,7 @@ type PositionInfoColumns struct {
 	LinkUrl      string // 跳转地址
 	Sort         string //
 	CreatedAt    string //
-	UpdateedAt   string //
+	UpdatedAt    string //
 	DeletedAt    string //
 }
 
@@ -40,7 +40,7 @@ var positionInfoColumns = PositionInfoColumns{
 	LinkUrl:      "link_url",
 	Sort:         "sort",
 	CreatedAt:    "created_at",
-	UpdateedAt:   "updateed_at",
+	UpdatedAt:    "updated_at",
 	DeletedAt:    "deleted_at",
 }
 

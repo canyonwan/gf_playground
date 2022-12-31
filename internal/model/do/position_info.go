@@ -19,6 +19,6 @@ type PositionInfo struct {
 	LinkUrl      interface{} // 跳转地址
 	Sort         interface{} //
 	CreatedAt    *gtime.Time //
-	UpdateedAt   *gtime.Time //
+	UpdatedAt    *gtime.Time //
 	DeletedAt    *gtime.Time //
 }

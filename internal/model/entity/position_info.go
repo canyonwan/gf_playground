@@ -17,6 +17,6 @@ type PositionInfo struct {
 	LinkUrl      string      `json:"linkUrl"      description:"跳转地址"` // 跳转地址
 	Sort         int         `json:"sort"         description:""`     //
 	CreatedAt    *gtime.Time `json:"createdAt"    description:""`     //
-	UpdateedAt   *gtime.Time `json:"updateedAt"   description:""`     //
+	UpdatedAt    *gtime.Time `json:"updatedAt"    description:""`     //
 	DeletedAt    *gtime.Time `json:"deletedAt"    description:""`     //
 }

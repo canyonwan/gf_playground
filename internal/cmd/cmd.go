@@ -32,6 +32,7 @@ var (
 					controller.Banner,
 					controller.DataStatistics,
 					controller.CTodo,
+					controller.Position,
 				)
 			})
 			s.Run()
