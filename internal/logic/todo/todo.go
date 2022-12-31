@@ -43,9 +43,11 @@ func (s *sTodo) GetPage(ctx context.Context, in model.TodoPageGetInput) (out *mo
 			Size: in.Size,
 		},
 	}
+	// 分页查询
 	listModel := m.Page(in.Page, in.Size)
-
-	var list []*entity.Todo // 定义TodoItem模型
+	// 定义TodoItem模型
+	var list []*entity.Todo
+	// 将分页查询到的数据转换到list切片中
 	if err := listModel.Scan(&list); err != nil {
 		return out, err
 	}
