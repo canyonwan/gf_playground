@@ -2,7 +2,6 @@ package todo
 
 import (
 	"context"
-	"fmt"
 	"gf_playground/api/v1/common"
 	"gf_playground/internal/dao"
 	model "gf_playground/internal/model"
@@ -50,14 +49,12 @@ func (s *sTodo) GetPage(ctx context.Context, in model.TodoPageGetInput) (out *mo
 	if err := listModel.Scan(&list); err != nil {
 		return out, err
 	}
-	//
 	// 没有数据
 	if len(list) == 0 {
 		return out, nil
 	}
 	// 有数据 获取总数
 	out.Total, err = m.Count()
-	fmt.Println("out", out)
 	if err := listModel.Scan(&out.Content); err != nil {
 		return out, err
 	}
