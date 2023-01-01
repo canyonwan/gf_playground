@@ -1,0 +1,76 @@
+2023-01-01 22:12:59.958 [DEBU] {9047d014d03436171ec15c55e20966e3} [ 34 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-01 22:12:59.985 [DEBU] {9047d014d03436171ec15c55e20966e3} [ 25 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE `deleted_at` IS NULL LIMIT 0,10
+2023-01-01 22:13:11.077 [DEBU] {e8d879acd23436171fc15c5512d80fae} [ 21 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `account_info`(`account`,`password`,`role_ids`,`created_at`,`is_super_admin`,`updated_at`) VALUES('ut','consectetur ut ea nulla Duis','','2023-01-01 22:13:11',16,'2023-01-01 22:13:11') 
+2023-01-01 22:13:25.689 [DEBU] {00faf912d634361720c15c5523b61bad} [ 28 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `account_info`(`created_at`,`account`,`password`,`is_super_admin`,`updated_at`,`role_ids`) VALUES('2023-01-01 22:13:25','Ut aute anim enim','sed ut occaecat Ut id',14,'2023-01-01 22:13:25','') 
+2023-01-01 22:13:55.884 [ERRO] {e881b21add34361721c15c555201ec3f} [ 28 ms] [default] [gf_db_demo] [rows:0  ] UPDATE `account_info` SET `password`='ut ullamco laboris sint',`role_ids`='12',`is_super_admin`=76,`account`='voluptate Ut sit',`user_salt`='occaecat est commodo nostrud',`deleted_at`=null,`created_at`=null,`updated_at`='2023-01-01 22:13:55' WHERE (`id`=1) AND `deleted_at` IS NULL
+Error: Error 1406: Data too long for column 'user_salt' at row 1
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:674
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:135
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoUpdate
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:611
+5.  github.com/gogf/gf/v2/database/gdb.(*HookUpdateInput).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_hook.go:138
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).Update
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_update.go:97
+7.  gf_playground/internal/logic/account.(*sAccount).Update
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/account/account.go:57
+8.  gf_playground/internal/controller.(*cAccount).Update
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/controller/account.go:53
+9.  github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:152
+10. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+11. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:129
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:75
+13. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+14. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+15. github.com/gogf/gf/v2/net/ghttp.MiddlewareCORS
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_cors.go:12
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+17. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+19. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+20. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+21. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_handler_response.go:25
+22. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+23. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+24. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+25. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+26. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+27. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_tracing.go:78
+28. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:96
+29. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+30. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:95
+31. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+32. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+33. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_server_handler.go:132
+
+2023-01-01 22:14:10.488 [DEBU] {e8e73c81e034361722c15c55e0df67ca} [ 28 ms] [default] [gf_db_demo] [rows:1  ] UPDATE `account_info` SET `user_salt`='',`updated_at`='2023-01-01 22:14:10',`account`='voluptate Ut sit',`deleted_at`=null,`role_ids`='12',`is_super_admin`=76,`password`='ut ullamco laboris sint',`created_at`=null WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-01-01 22:14:26.907 [DEBU] {c8e64554e434361723c15c55aa91df68} [ 21 ms] [default] [gf_db_demo] [rows:1  ] DELETE FROM `account_info` WHERE `id`=1
