@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	CTodo = cTodo{}
+	Todo = cTodo{}
 )
 
 type cTodo struct{}
