@@ -31,8 +31,9 @@ var (
 				group.Bind(
 					controller.Banner,
 					controller.DataStatistics,
-					controller.CTodo,
+					controller.Todo,
 					controller.Position,
+					controller.Account,
 				)
 			})
 			s.Run()
