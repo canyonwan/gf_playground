@@ -12,6 +12,7 @@ gitpush.sh
 pkg/
 bin/
 cbuild
+.DS_Store
 **/.DS_Store
 .test/
 main
