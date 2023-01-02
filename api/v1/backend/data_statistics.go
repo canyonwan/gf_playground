@@ -1,10 +1,10 @@
-package admin
+package backend
 
 import "github.com/gogf/gf/v2/frame/g"
 
 // DataStatisticsGetReq 统计数据 统计图头部数据
 type DataStatisticsGetReq struct {
-	g.Meta `path:"admin/dataStatistics" method:"get" tags:"数据统计" summary:"summary数据统计" desc:"doc数据统计"`
+	g.Meta `path:"backend/dataStatistics" method:"get" tags:"数据统计" summary:"详情"`
 }
 
 type DataStatisticsGetRes struct {
