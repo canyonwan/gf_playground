@@ -1,4 +1,4 @@
-package admin
+package backend
 
 import (
 	"gf_playground/api/v1/common"
@@ -15,7 +15,7 @@ type PositionBase struct {
 
 // PositionPageReq 分页
 type PositionPageReq struct {
-	g.Meta `path:"admin/position" method:"GET" tags:"手工位管理"  summary:"分页"`
+	g.Meta `path:"backend/position" method:"GET" tags:"手工位管理"  summary:"分页"`
 	Page   int `json:"page" dc:"页码" d:"1"`
 	Size   int `json:"size" dc:"页数" d:"10"`
 	Sort   int `json:"sort" dc:"排序字段"`
@@ -26,7 +26,7 @@ type PositionPageRes struct {
 
 // PositionCreateReq 新增
 type PositionCreateReq struct {
-	g.Meta `path:"admin/position" method:"POST" tags:"手工位管理" summary:"新增"`
+	g.Meta `path:"backend/position" method:"POST" tags:"手工位管理" summary:"新增"`
 	PositionBase
 }
 type PositionCreateRes struct {
@@ -35,14 +35,14 @@ type PositionCreateRes struct {
 
 // PositionDeleteReq 删除
 type PositionDeleteReq struct {
-	g.Meta `path:"admin/position/{id}" in:"path" method:"delete" tags:"手工位管理" summary:"删除"`
+	g.Meta `path:"backend/position/{id}" in:"path" method:"delete" tags:"手工位管理" summary:"删除"`
 	Id     int `json:"id" v:"required#id不能为空" dc:"id"`
 }
 type PositionDeleteRes struct{}
 
 // PositionUpdateReq 更新
 type PositionUpdateReq struct {
-	g.Meta `path:"admin/position" method:"PUT" tags:"手工位管理" summary:"更新"`
+	g.Meta `path:"backend/position" method:"PUT" tags:"手工位管理" summary:"更新"`
 	Id     int `json:"id" v:"required#id不能为空" dc:"id"`
 	PositionBase
 }

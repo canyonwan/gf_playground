@@ -1,7 +1,7 @@
 package model
 
 import (
-	"gf_playground/api/v1/admin"
+	"gf_playground/api/v1/backend"
 	"gf_playground/api/v1/common"
 	"gf_playground/internal/model/entity"
 )
@@ -16,7 +16,7 @@ type PositionPageOutput struct {
 }
 
 type PositionCreateInput struct {
-	admin.PositionBase
+	backend.PositionBase
 }
 
 type PositionCreateOutput struct {
