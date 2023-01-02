@@ -2,7 +2,7 @@ package controller
 
 import (
 	"context"
-	"gf_playground/api/v1/admin"
+	"gf_playground/api/v1/backend"
 	"gf_playground/api/v1/common"
 	"gf_playground/internal/model"
 	"gf_playground/internal/model/entity"
@@ -15,7 +15,7 @@ var (
 
 type cAccount struct{}
 
-func (ca *cAccount) Page(ctx context.Context, req *admin.AccountPageReq) (res *admin.AccountPageRes, err error) {
+func (ca *cAccount) Page(ctx context.Context, req *backend.AccountPageReq) (res *backend.AccountPageRes, err error) {
 	out, err := service.Account().Page(ctx, model.AccountPageInput{
 		PageCommonReq: common.PageCommonReq{
 			Page: req.Page,
@@ -25,7 +25,7 @@ func (ca *cAccount) Page(ctx context.Context, req *admin.AccountPageReq) (res *a
 	if err != nil {
 		return nil, err
 	}
-	return &admin.AccountPageRes{
+	return &backend.AccountPageRes{
 		PageCommonRes: common.PageCommonRes{
 			Content: out.Content,
 			Page:    out.Page,
@@ -35,7 +35,7 @@ func (ca *cAccount) Page(ctx context.Context, req *admin.AccountPageReq) (res *a
 	}, nil
 }
 
-func (ca *cAccount) Create(ctx context.Context, req *admin.AccountCreateReq) (res *admin.AccountCreateRes, err error) {
+func (ca *cAccount) Create(ctx context.Context, req *backend.AccountCreateReq) (res *backend.AccountCreateRes, err error) {
 	out, err := service.Account().Create(ctx, model.AccountCreateInput{
 		AccountBase: model.AccountBase{
 			Account:      req.Account,
@@ -46,10 +46,10 @@ func (ca *cAccount) Create(ctx context.Context, req *admin.AccountCreateReq) (re
 	if err != nil {
 		return nil, err
 	}
-	return &admin.AccountCreateRes{Id: out.Id}, nil
+	return &backend.AccountCreateRes{Id: out.Id}, nil
 }
 
-func (ca *cAccount) Update(ctx context.Context, req *admin.AccountUpdateReq) (res *admin.AccountUpdateRes, err error) {
+func (ca *cAccount) Update(ctx context.Context, req *backend.AccountUpdateReq) (res *backend.AccountUpdateRes, err error) {
 	out, err := service.Account().Update(ctx, model.AccountUpdateInput{
 		AccountInfo: entity.AccountInfo{
 			Id:           req.Id,
@@ -63,15 +63,15 @@ func (ca *cAccount) Update(ctx context.Context, req *admin.AccountUpdateReq) (re
 	if err != nil {
 		return nil, err
 	}
-	return &admin.AccountUpdateRes{Id: out.Id}, nil
+	return &backend.AccountUpdateRes{Id: out.Id}, nil
 }
 
-func (ca *cAccount) Delete(ctx context.Context, req *admin.AccountDeleteReq) (res *admin.AccountDeleteRes, err error) {
+func (ca *cAccount) Delete(ctx context.Context, req *backend.AccountDeleteReq) (res *backend.AccountDeleteRes, err error) {
 	out, err := service.Account().Delete(ctx, model.AccountDeleteInput{
 		Id: req.Id,
 	})
 	if err != nil {
 		return nil, err
 	}
-	return &admin.AccountDeleteRes{Id: out.Id}, nil
+	return &backend.AccountDeleteRes{Id: out.Id}, nil
 }

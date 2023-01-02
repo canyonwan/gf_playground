@@ -1,4 +1,4 @@
-package admin
+package backend
 
 import (
 	"gf_playground/api/v1/common"
@@ -15,7 +15,7 @@ type AccountBase struct {
 
 // AccountPageReq 分页
 type AccountPageReq struct {
-	g.Meta `path:"admin/account" method:"get" tags:"帐号管理"  summary:"分页"`
+	g.Meta `path:"backend/account" method:"get" tags:"帐号管理"  summary:"分页"`
 	common.PageCommonReq
 }
 type AccountPageRes struct {
@@ -24,7 +24,7 @@ type AccountPageRes struct {
 
 // AccountCreateReq 新增
 type AccountCreateReq struct {
-	g.Meta `path:"admin/account" method:"POST" tags:"帐号管理" summary:"创建管理员" `
+	g.Meta `path:"backend/account" method:"POST" tags:"帐号管理" summary:"创建" `
 	AccountBase
 }
 type AccountCreateRes struct {
@@ -33,7 +33,7 @@ type AccountCreateRes struct {
 
 // AccountUpdateReq 编辑
 type AccountUpdateReq struct {
-	g.Meta `path:"admin/account" method:"put" tags:"帐号管理" summary:"编辑管理员" `
+	g.Meta `path:"backend/account" method:"put" tags:"帐号管理" summary:"编辑" `
 	*entity.AccountInfo
 }
 type AccountUpdateRes struct {
@@ -42,7 +42,7 @@ type AccountUpdateRes struct {
 
 // AccountDeleteReq 删除
 type AccountDeleteReq struct {
-	g.Meta `path:"admin/account/{id}" in:"path" method:"delete" tags:"帐号管理" summary:"删除管理员" `
+	g.Meta `path:"backend/account/{id}" in:"path" method:"delete" tags:"帐号管理" summary:"删除" `
 	Id     int `json:"id" dc:"管理员Id"`
 }
 type AccountDeleteRes struct {
