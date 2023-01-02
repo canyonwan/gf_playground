@@ -2,7 +2,6 @@ package backend
 
 import (
 	"gf_playground/api/v1/common"
-	"gf_playground/internal/model/entity"
 	"github.com/gogf/gf/v2/frame/g"
 )
 
@@ -33,8 +32,9 @@ type AccountCreateRes struct {
 
 // AccountUpdateReq 编辑
 type AccountUpdateReq struct {
-	g.Meta `path:"backend/account" method:"put" tags:"帐号管理" summary:"编辑" `
-	*entity.AccountInfo
+	g.Meta `path:"backend/account" method:"put" tags:"帐号管理" summary:"编辑"`
+	Id     int `json:"id"`
+	AccountBase
 }
 type AccountUpdateRes struct {
 	Id int `json:"id"`

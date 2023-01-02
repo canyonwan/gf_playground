@@ -7,7 +7,9 @@ import (
 	"gf_playground/internal/model"
 	"gf_playground/internal/model/entity"
 	"gf_playground/internal/service"
+	"gf_playground/utility"
 	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/util/grand"
 )
 
 type sAccount struct{}
@@ -44,6 +46,9 @@ func (sa *sAccount) Page(ctx context.Context, in model.AccountPageInput) (out *m
 }
 
 func (sa *sAccount) Create(ctx context.Context, in model.AccountCreateInput) (out *model.AccountCreateOutput, err error) {
+	userSalt := grand.S(10)
+	in.Password = utility.EncryptPassword(in.Password, userSalt)
+	in.UserSalt = userSalt
 	id, err := dao.AccountInfo.Ctx(ctx).Data(in).InsertAndGetId()
 	if err != nil {
 		return nil, err
@@ -51,7 +56,15 @@ func (sa *sAccount) Create(ctx context.Context, in model.AccountCreateInput) (ou
 	return &model.AccountCreateOutput{Id: int(id)}, nil
 }
 
+// Update TODO: 帐号和密码字段如果不传,会直接更新为空
 func (sa *sAccount) Update(ctx context.Context, in model.AccountUpdateInput) (out *model.AccountUpdateOutput, err error) {
+	// 注: 如果用户修改了密码, 需要重新加密;没有则反之
+	// 1. 判断是否修改了密码
+	if in.Password != "" {
+		userSalt := grand.S(10)
+		in.Password = utility.EncryptPassword(in.Password, userSalt)
+		in.UserSalt = userSalt
+	}
 	_, err = dao.AccountInfo.Ctx(ctx).Data(in).FieldsEx(dao.AccountInfo.Columns().Id).Where(g.Map{
 		dao.AccountInfo.Columns().Id: in.Id,
 	}).Update()

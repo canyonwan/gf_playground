@@ -10,6 +10,7 @@ type AccountBase struct {
 	Password     string `json:"password" dc:"密码"`
 	IsSuperAdmin int    `json:"isSuperAdmin" dc:"是否超级管理员"`
 	RoleIds      string `json:"roleIds" dc:"角色IDs"`
+	UserSalt     string `json:"userSalt" dc:"加密盐"`
 }
 
 // AccountPageInput 分页

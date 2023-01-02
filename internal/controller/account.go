@@ -57,7 +57,6 @@ func (ca *cAccount) Update(ctx context.Context, req *backend.AccountUpdateReq) (
 			Password:     req.Password,
 			IsSuperAdmin: req.IsSuperAdmin,
 			RoleIds:      req.RoleIds,
-			UserSalt:     req.UserSalt,
 		},
 	})
 	if err != nil {
