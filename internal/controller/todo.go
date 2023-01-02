@@ -2,8 +2,8 @@ package controller
 
 import (
 	"context"
-	"gf_playground/api/v1/app"
 	"gf_playground/api/v1/common"
+	"gf_playground/api/v1/frontend"
 	"gf_playground/internal/model"
 	"gf_playground/internal/service"
 )
@@ -14,16 +14,16 @@ var (
 
 type cTodo struct{}
 
-func (ct *cTodo) GetList(ctx context.Context, req *app.TodoListGetReq) (res *app.TodoListGetRes, err error) {
-	//res = &app.TodoListGetRes{}
+func (ct *cTodo) GetList(ctx context.Context, req *frontend.TodoListGetReq) (res *frontend.TodoListGetRes, err error) {
+	//res = &frontend.TodoListGetRes{}
 	out, err := service.Todo().GetList(ctx)
 	if err != nil {
 		return nil, err
 	}
-	return &app.TodoListGetRes{List: out.List}, nil
+	return &frontend.TodoListGetRes{List: out.List}, nil
 }
 
-func (ct *cTodo) GetPage(ctx context.Context, req *app.TodoPageGetReq) (res *app.TodoPageGetRes, err error) {
+func (ct *cTodo) GetPage(ctx context.Context, req *frontend.TodoPageGetReq) (res *frontend.TodoPageGetRes, err error) {
 	out, err := service.Todo().GetPage(ctx, model.TodoPageGetInput{
 		Page: req.Page,
 		Size: req.Size,
@@ -31,7 +31,7 @@ func (ct *cTodo) GetPage(ctx context.Context, req *app.TodoPageGetReq) (res *app
 	if err != nil {
 		return nil, err
 	}
-	return &app.TodoPageGetRes{
+	return &frontend.TodoPageGetRes{
 		PageCommonRes: common.PageCommonRes{
 			Page:    out.Page,
 			Size:    out.Size,
@@ -41,7 +41,7 @@ func (ct *cTodo) GetPage(ctx context.Context, req *app.TodoPageGetReq) (res *app
 	}, nil
 }
 
-func (ct *cTodo) Create(ctx context.Context, req *app.TodoCreateReq) (res *app.TodoCreateRes, err error) {
+func (ct *cTodo) Create(ctx context.Context, req *frontend.TodoCreateReq) (res *frontend.TodoCreateRes, err error) {
 	out, err := service.Todo().Create(ctx, &model.TodoCreateInput{
 		TodoItemOutputBase: model.TodoItemOutputBase{
 			Title:   req.Title,
@@ -51,10 +51,10 @@ func (ct *cTodo) Create(ctx context.Context, req *app.TodoCreateReq) (res *app.T
 	if err != nil {
 		return nil, err
 	}
-	return &app.TodoCreateRes{Id: out.Id}, err
+	return &frontend.TodoCreateRes{Id: out.Id}, err
 }
 
-func (ct *cTodo) Update(ctx context.Context, req *app.TodoUpdateReq) (res *app.TodoUpdateRes, err error) {
+func (ct *cTodo) Update(ctx context.Context, req *frontend.TodoUpdateReq) (res *frontend.TodoUpdateRes, err error) {
 	err = service.Todo().Update(ctx, model.TodoUpdateInput{
 		Id: req.Id,
 		TodoItemOutputBase: model.TodoItemOutputBase{
@@ -65,7 +65,7 @@ func (ct *cTodo) Update(ctx context.Context, req *app.TodoUpdateReq) (res *app.T
 	return
 }
 
-func (ct *cTodo) Delete(ctx context.Context, req *app.TodoDeleteReq) (res *app.TodoDeleteRes, err error) {
+func (ct *cTodo) Delete(ctx context.Context, req *frontend.TodoDeleteReq) (res *frontend.TodoDeleteRes, err error) {
 	err = service.Todo().Delete(ctx, req.Id)
 	return
 }
