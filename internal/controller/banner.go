@@ -2,7 +2,7 @@ package controller
 
 import (
 	"context"
-	"gf_playground/api/v1/app"
+	"gf_playground/api/v1/frontend"
 	"gf_playground/internal/model"
 	"gf_playground/internal/model/entity"
 	"gf_playground/internal/service"
@@ -22,7 +22,7 @@ type cBanner struct{}
 
 // Create
 // 功能： 接收并解析请求参数
-func (c *cBanner) Create(ctx context.Context, req *app.CreateBannerReq) (res *app.CreateBannerRes, err error) {
+func (c *cBanner) Create(ctx context.Context, req *frontend.CreateBannerReq) (res *frontend.CreateBannerRes, err error) {
 	out, err := service.Banner().Create(ctx, model.BannerCreateInput{
 		BannerBase: model.BannerBase{
 			Url:      req.Url,
@@ -34,15 +34,15 @@ func (c *cBanner) Create(ctx context.Context, req *app.CreateBannerReq) (res *ap
 	if err != nil {
 		return res, nil
 	}
-	return &app.CreateBannerRes{Id: out.Id}, nil
+	return &frontend.CreateBannerRes{Id: out.Id}, nil
 }
 
-func (c *cBanner) GetSingle(ctx context.Context, req *app.GetBannerReq) (res *app.GetBannerRes, err error) {
+func (c *cBanner) GetSingle(ctx context.Context, req *frontend.GetBannerReq) (res *frontend.GetBannerRes, err error) {
 	output, err := service.Banner().GetSingle(ctx, model.BannerGetInput{Id: req.Id})
 	if err != nil {
 		return nil, err
 	}
-	return &app.GetBannerRes{Banner: &entity.Banner{
+	return &frontend.GetBannerRes{Banner: &entity.Banner{
 		Id:        output.Id,
 		Url:       output.Url,
 		JumpLink:  output.JumpLink,
@@ -54,7 +54,7 @@ func (c *cBanner) GetSingle(ctx context.Context, req *app.GetBannerReq) (res *ap
 	}, nil
 }
 
-func (c *cBanner) DeleteSingle(ctx context.Context, req *app.DeleteBannerReq) (res *app.DeleteBannerRes, err error) {
+func (c *cBanner) DeleteSingle(ctx context.Context, req *frontend.DeleteBannerReq) (res *frontend.DeleteBannerRes, err error) {
 	err = service.Banner().DeleteSingle(ctx, req.Id)
 	return
 }
