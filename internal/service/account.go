@@ -13,7 +13,7 @@ import (
 type (
 	IAccount interface {
 		Page(ctx context.Context, in model.AccountPageInput) (out *model.AccountPageOutput, err error)
-		Create(ctx context.Context, in model.AccountCreateInput) (out *model.AccountCreateOutput, err error)
+		Create(ctx context.Context, in model.AccountCreateInput) (out model.AccountCreateOutput, err error)
 		Update(ctx context.Context, in model.AccountUpdateInput) (out *model.AccountUpdateOutput, err error)
 		Delete(ctx context.Context, in model.AccountDeleteInput) (out *model.AccountDeleteOutput, err error)
 	}

@@ -45,15 +45,15 @@ func (sa *sAccount) Page(ctx context.Context, in model.AccountPageInput) (out *m
 	return
 }
 
-func (sa *sAccount) Create(ctx context.Context, in model.AccountCreateInput) (out *model.AccountCreateOutput, err error) {
+func (sa *sAccount) Create(ctx context.Context, in model.AccountCreateInput) (out model.AccountCreateOutput, err error) {
 	userSalt := grand.S(10)
 	in.Password = utility.EncryptPassword(in.Password, userSalt)
 	in.UserSalt = userSalt
 	id, err := dao.AccountInfo.Ctx(ctx).Data(in).InsertAndGetId()
 	if err != nil {
-		return nil, err
+		return out, err
 	}
-	return &model.AccountCreateOutput{Id: int(id)}, nil
+	return model.AccountCreateOutput{Id: int(id)}, nil
 }
 
 func (sa *sAccount) Update(ctx context.Context, in model.AccountUpdateInput) (out *model.AccountUpdateOutput, err error) {
