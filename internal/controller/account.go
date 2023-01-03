@@ -5,7 +5,6 @@ import (
 	"gf_playground/api/v1/backend"
 	"gf_playground/api/v1/common"
 	"gf_playground/internal/model"
-	"gf_playground/internal/model/entity"
 	"gf_playground/internal/service"
 )
 
@@ -40,6 +39,7 @@ func (ca *cAccount) Create(ctx context.Context, req *backend.AccountCreateReq) (
 		AccountBase: model.AccountBase{
 			Account:      req.Account,
 			Password:     req.Password,
+			RoleIds:      req.RoleIds,
 			IsSuperAdmin: req.IsSuperAdmin,
 		},
 	})
@@ -51,12 +51,12 @@ func (ca *cAccount) Create(ctx context.Context, req *backend.AccountCreateReq) (
 
 func (ca *cAccount) Update(ctx context.Context, req *backend.AccountUpdateReq) (res *backend.AccountUpdateRes, err error) {
 	out, err := service.Account().Update(ctx, model.AccountUpdateInput{
-		AccountInfo: &entity.AccountInfo{
-			Id:           req.Id,
+		Id: req.Id,
+		AccountBase: model.AccountBase{
 			Account:      req.Account,
 			Password:     req.Password,
-			IsSuperAdmin: req.IsSuperAdmin,
 			RoleIds:      req.RoleIds,
+			IsSuperAdmin: req.IsSuperAdmin,
 		},
 	})
 	if err != nil {
