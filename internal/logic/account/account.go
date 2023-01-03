@@ -56,7 +56,6 @@ func (sa *sAccount) Create(ctx context.Context, in model.AccountCreateInput) (ou
 	return &model.AccountCreateOutput{Id: int(id)}, nil
 }
 
-// Update TODO: 帐号和密码字段如果不传,会直接更新为空
 func (sa *sAccount) Update(ctx context.Context, in model.AccountUpdateInput) (out *model.AccountUpdateOutput, err error) {
 	// 注: 如果用户修改了密码, 需要重新加密;没有则反之
 	// 1. 判断是否修改了密码
