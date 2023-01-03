@@ -2,7 +2,6 @@ package model
 
 import (
 	"gf_playground/api/v1/common"
-	"gf_playground/internal/model/entity"
 )
 
 type AccountBase struct {
@@ -39,7 +38,8 @@ type AccountDeleteOutput struct {
 
 // AccountUpdateInput 更新
 type AccountUpdateInput struct {
-	*entity.AccountInfo
+	Id int `json:"id"`
+	AccountBase
 }
 type AccountUpdateOutput struct {
 	Id int `json:"id"`
