@@ -67,7 +67,7 @@ func (sa *sAccount) Update(ctx context.Context, in model.AccountUpdateInput) (ou
 	}
 	_, err = dao.AccountInfo.Ctx(ctx).Data(in).FieldsEx(dao.AccountInfo.Columns().Id).Where(g.Map{
 		dao.AccountInfo.Columns().Id: in.Id,
-	}).Update()
+	}).OmitEmpty().Update()
 	if err != nil {
 		return nil, err
 	}

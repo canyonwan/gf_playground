@@ -39,7 +39,7 @@ type AccountDeleteOutput struct {
 
 // AccountUpdateInput 更新
 type AccountUpdateInput struct {
-	entity.AccountInfo
+	*entity.AccountInfo
 }
 type AccountUpdateOutput struct {
 	Id int `json:"id"`

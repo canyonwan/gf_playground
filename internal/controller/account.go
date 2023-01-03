@@ -51,7 +51,7 @@ func (ca *cAccount) Create(ctx context.Context, req *backend.AccountCreateReq) (
 
 func (ca *cAccount) Update(ctx context.Context, req *backend.AccountUpdateReq) (res *backend.AccountUpdateRes, err error) {
 	out, err := service.Account().Update(ctx, model.AccountUpdateInput{
-		AccountInfo: entity.AccountInfo{
+		AccountInfo: &entity.AccountInfo{
 			Id:           req.Id,
 			Account:      req.Account,
 			Password:     req.Password,
