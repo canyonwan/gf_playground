@@ -3,6 +3,7 @@ module gf_playground
 go 1.19
 
 require (
+	github.com/goflyfox/gtoken v1.5.7
 	github.com/gogf/gf/contrib/drivers/mysql/v2 v2.2.2
 	github.com/gogf/gf/v2 v2.2.2
 )
