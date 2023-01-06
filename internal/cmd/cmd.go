@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"gf_playground/internal/service"
 
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/net/ghttp"
@@ -26,8 +27,11 @@ var (
 			oai.Config.CommonResponseDataField = `Data`
 
 			s.Group("/v1", func(group *ghttp.RouterGroup) {
-				group.Middleware(ghttp.MiddlewareHandlerResponse)
-				group.Middleware(ghttp.MiddlewareCORS)
+				group.Middleware(
+					ghttp.MiddlewareCORS,
+					service.Middleware().Ctx,
+					service.Middleware().ResponseHandler,
+				)
 				group.Bind(
 					controller.Banner,
 					controller.DataStatistics,
