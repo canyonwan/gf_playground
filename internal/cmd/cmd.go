@@ -34,6 +34,7 @@ var (
 					controller.Todo,
 					controller.Position,
 					controller.Account,
+					controller.Login,
 				)
 			})
 			s.Run()
