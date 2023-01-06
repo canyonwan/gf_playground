@@ -4,7 +4,9 @@ import (
 	"context"
 	"gf_playground/api/v1/backend"
 	"gf_playground/internal/model"
+	"gf_playground/internal/model/entity"
 	"gf_playground/internal/service"
+	"github.com/gogf/gf/v2/frame/g"
 )
 
 var Login = cLogin{}
@@ -18,6 +20,13 @@ func (l *cLogin) Login(ctx context.Context, req *backend.LoginReq) (res *backend
 		return nil, err
 	}
 
-	res.Info = service.Session().GetUser(ctx)
+	var accountInfo *entity.AccountInfo
+	accountInfo = service.Session().GetUser(ctx)
+	res.Info = g.Map{
+		"id":           accountInfo.Id,
+		"account":      accountInfo.Account,
+		"isSuperAdmin": accountInfo.IsSuperAdmin,
+		"roleIds":      accountInfo.RoleIds,
+	}
 	return
 }

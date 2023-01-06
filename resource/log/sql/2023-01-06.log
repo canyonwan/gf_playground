@@ -1,0 +1,312 @@
+2023-01-06 16:58:45.037 [ERRO] {98a57bec90ac3717ee5fe3070ce26976} [  0 ms] [default] [gf_db_demo] [rows:0  ] SHOW FULL COLUMNS FROM `account_info`
+Error: dial tcp 127.0.0.1:3306: connect: connection refused
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:674
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:74
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/contrib/drivers/mysql/v2.(*Driver).TableFields
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/contrib/drivers/mysql/v2@v2.2.2/mysql.go:148
+6.  github.com/gogf/gf/v2/database/gdb.(*DriverWrapperDB).TableFields.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_driver_wrapper_db.go:80
+7.  github.com/gogf/gf/v2/container/gmap.(*StrAnyMap).doSetWithLockCheck
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/container/gmap/gmap_hash_str_any_map.go:217
+8.  github.com/gogf/gf/v2/container/gmap.(*StrAnyMap).GetOrSetFuncLock
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/container/gmap/gmap_hash_str_any_map.go:254
+9.  github.com/gogf/gf/v2/database/gdb.(*DriverWrapperDB).TableFields
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_driver_wrapper_db.go:78
+10. github.com/gogf/gf/v2/database/gdb.(*Model).TableFields
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_utility.go:38
+11. github.com/gogf/gf/v2/database/gdb.(*Model).mappingAndFilterToTableFields
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_utility.go:56
+12. github.com/gogf/gf/v2/database/gdb.(*Model).getFieldsFrom
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_fields.go:212
+13. github.com/gogf/gf/v2/database/gdb.(*Model).Fields
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_fields.go:30
+14. github.com/gogf/gf/v2/database/gdb.(*Model).doStruct
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:235
+15. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:326
+16. gf_playground/internal/logic/login.(*sLogin).Login
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/login/login.go:23
+17. gf_playground/internal/controller.(*cLogin).Login
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/controller/login.go:16
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:152
+19. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+20. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:129
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:75
+22. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+24. github.com/gogf/gf/v2/net/ghttp.MiddlewareCORS
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_cors.go:12
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+26. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+28. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+30. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_handler_response.go:25
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+32. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+34. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+36. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_tracing.go:78
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:96
+38. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:95
+40. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+41. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+42. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_server_handler.go:132
+
+2023-01-06 16:58:48.694 [ERRO] {98a57bec90ac3717ee5fe3070ce26976} [  0 ms] [default] [gf_db_demo] [rows:0  ] SHOW FULL COLUMNS FROM `account_info`
+Error: dial tcp 127.0.0.1:3306: connect: connection refused
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:674
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:74
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/contrib/drivers/mysql/v2.(*Driver).TableFields
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/contrib/drivers/mysql/v2@v2.2.2/mysql.go:148
+6.  github.com/gogf/gf/v2/database/gdb.(*DriverWrapperDB).TableFields.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_driver_wrapper_db.go:80
+7.  github.com/gogf/gf/v2/container/gmap.(*StrAnyMap).doSetWithLockCheck
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/container/gmap/gmap_hash_str_any_map.go:217
+8.  github.com/gogf/gf/v2/container/gmap.(*StrAnyMap).GetOrSetFuncLock
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/container/gmap/gmap_hash_str_any_map.go:254
+9.  github.com/gogf/gf/v2/database/gdb.(*DriverWrapperDB).TableFields
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_driver_wrapper_db.go:78
+10. github.com/gogf/gf/v2/database/gdb.(*Model).TableFields
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_utility.go:38
+11. github.com/gogf/gf/v2/database/gdb.(*Model).getSoftFieldName
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_time.go:98
+12. github.com/gogf/gf/v2/database/gdb.(*Model).getSoftFieldNameDeleted
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_time.go:92
+13. github.com/gogf/gf/v2/database/gdb.(*Model).getConditionForSoftDeleting
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_time.go:144
+14. github.com/gogf/gf/v2/database/gdb.(*Model).formatCondition
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:619
+15. github.com/gogf/gf/v2/database/gdb.(*Model).getFormattedSqlAndArgs
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:577
+16. github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:45
+17. github.com/gogf/gf/v2/database/gdb.(*Model).One
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:140
+18. github.com/gogf/gf/v2/database/gdb.(*Model).doStruct
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:238
+19. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:326
+20. gf_playground/internal/logic/login.(*sLogin).Login
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/login/login.go:23
+21. gf_playground/internal/controller.(*cLogin).Login
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/controller/login.go:16
+22. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:152
+23. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+24. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:129
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:75
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.MiddlewareCORS
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_cors.go:12
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+34. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_handler_response.go:25
+35. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+36. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+37. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+38. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+39. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+40. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_tracing.go:78
+41. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:96
+42. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+43. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:95
+44. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+45. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+46. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_server_handler.go:132
+
+2023-01-06 16:58:48.832 [ERRO] {98a57bec90ac3717ee5fe3070ce26976} [  1 ms] [default] [gf_db_demo] [rows:0  ] SELECT `Id`,`Account`,`Password`,`IsSuperAdmin`,`RoleIds`,`UserSalt`,`CreatedAt`,`UpdatedAt`,`DeletedAt` FROM `account_info` WHERE `account`='dolore' LIMIT 1
+Error: dial tcp 127.0.0.1:3306: connect: connection refused
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:674
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoQuery
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:74
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoSelect
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:155
+5.  github.com/gogf/gf/v2/database/gdb.(*HookSelectInput).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_hook.go:113
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAllBySql
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:547
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).doGetAll
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:46
+8.  github.com/gogf/gf/v2/database/gdb.(*Model).One
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:140
+9.  github.com/gogf/gf/v2/database/gdb.(*Model).doStruct
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:238
+10. github.com/gogf/gf/v2/database/gdb.(*Model).Scan
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_select.go:326
+11. gf_playground/internal/logic/login.(*sLogin).Login
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/login/login.go:23
+12. gf_playground/internal/controller.(*cLogin).Login
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/controller/login.go:16
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:152
+14. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:129
+16. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:75
+17. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+19. github.com/gogf/gf/v2/net/ghttp.MiddlewareCORS
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_cors.go:12
+20. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+21. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+22. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+23. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+24. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+25. github.com/gogf/gf/v2/net/ghttp.MiddlewareHandlerResponse
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_handler_response.go:25
+26. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+27. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+28. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+29. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+30. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+31. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_tracing.go:78
+32. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:96
+33. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+34. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:95
+35. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+36. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+37. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_server_handler.go:132
+
+2023-01-06 16:58:55.336 [DEBU] {1048ff5093ac3717ef5fe307b755709a} [ 24 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 16:58:55.352 [DEBU] {1048ff5093ac3717ef5fe307b755709a} [ 16 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='dolore') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:05:44.217 [DEBU] {98c52f84f2ac3717f05fe3075f11fd33} [ 23 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='canyonwan') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:06:43.910 [DEBU] {c827636a00ad37175de9a8089ae5e272} [ 22 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 17:06:43.926 [DEBU] {c827636a00ad37175de9a8089ae5e272} [ 15 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='canyonwan') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:06:47.966 [DEBU] {48e7bc5c01ad37175ee9a808a0b0e19c} [ 12 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='canyonwa3323n') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:06:55.812 [DEBU] {70e59d3003ad37175fe9a808c8b2d676} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='canyonwan') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:07:02.884 [DEBU] {70e1d7d504ad371760e9a808aef03775} [ 14 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='canyonwan') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:07:07.105 [DEBU] {d0578cd105ad371761e9a80815735844} [ 12 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='canyonwan') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:07:27.960 [DEBU] {f08829ac0aad371762e9a808c1388aaf} [ 19 ms] [default] [gf_db_demo] [rows:1  ] DELETE FROM `account_info` WHERE `id`=8
+2023-01-06 17:07:47.468 [DEBU] {60bbfc360fad371763e9a808da329936} [ 18 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `account_info`(`account`,`password`,`created_at`,`user_salt`,`is_super_admin`,`role_ids`,`updated_at`) VALUES('test','1ca4c744af2feaecadc791836ffd0605','2023-01-06 17:07:47','N2kdebSeUZ',7,'95','2023-01-06 17:07:47') 
+2023-01-06 17:08:00.403 [DEBU] {28ae593a12ad371764e9a8083b30037b} [ 12 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:12:21.497 [DEBU] {e8f360044fad37173cbe7478d4fdc85f} [ 17 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 17:12:21.515 [DEBU] {e8f360044fad37173cbe7478d4fdc85f} [ 17 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:14:40.097 [DEBU] {d0a7d8486fad3717da6a374f4456e189} [ 29 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 17:14:40.127 [DEBU] {d0a7d8486fad3717da6a374f4456e189} [ 25 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:15:14.605 [DEBU] {70efc05277ad3717db6a374f76f27600} [ 12 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:15:53.829 [DEBU] {68eb977480ad3717dc6a374f5fc96c7c} [ 14 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 17:45:49.284 [DEBU] {d01ef07d22af3717ce859a017cd98299} [ 13 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 17:45:49.301 [DEBU] {d01ef07d22af3717ce859a017cd98299} [ 16 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 19:56:18.724 [DEBU] {68c5476c41b63717a70a094742f65c7e} [ 24 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 19:56:18.744 [DEBU] {68c5476c41b63717a70a094742f65c7e} [ 18 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 19:56:34.051 [DEBU] {785162fd44b63717a80a0947d29e67bd} [ 32 ms] [default] [gf_db_demo] [rows:1  ] DELETE FROM `account_info` WHERE `id`=5
+2023-01-06 19:57:57.314 [DEBU] {60339f6058b63717ccec1c75dafe8cee} [ 26 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 19:57:57.332 [DEBU] {60339f6058b63717ccec1c75dafe8cee} [ 18 ms] [default] [gf_db_demo] [rows:0  ] DELETE FROM `account_info` WHERE `id`=5
+2023-01-06 19:58:07.605 [DEBU] {304fb4c65ab63717cdec1c759c68c5e6} [ 16 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 19:58:29.666 [DEBU] {e8105ee95fb63717ceec1c757e7c1cd2} [ 20 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 19:59:07.971 [DEBU] {30d3c3d468b63717cfec1c75680369ba} [ 16 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 19:59:41.257 [DEBU] {40190a9570b63717d0ec1c75f271e1d6} [ 12 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:03:15.562 [DEBU] {8888277aa2b63717c1aea8621059c76d} [ 19 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 20:03:15.599 [DEBU] {8888277aa2b63717c1aea8621059c76d} [ 35 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:06:00.291 [DEBU] {10bd3fd4c8b637175ab4200d2e6f96e7} [ 27 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 20:06:00.319 [DEBU] {10bd3fd4c8b637175ab4200d2e6f96e7} [ 26 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:07:41.133 [DEBU] {88c59f4fe0b637177f079538fe65324d} [ 14 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 20:07:41.146 [DEBU] {88c59f4fe0b637177f079538fe65324d} [ 12 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:09:00.760 [DEBU] {f8a5d5d9f2b63717800795388ce094e9} [ 15 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:10:00.159 [DEBU] {e0febcad00b7371766cb641ff78a7dea} [ 22 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 20:10:00.175 [DEBU] {e0febcad00b7371766cb641ff78a7dea} [ 15 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:10:32.599 [DEBU] {103ab83a08b73717c5485b351c31f1c2} [ 33 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 20:10:32.617 [DEBU] {103ab83a08b73717c5485b351c31f1c2} [ 17 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:10:36.061 [DEBU] {50fe600a09b73717c6485b35565f3536} [ 13 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:30:50.713 [DEBU] {b8a5e1d623b83717c7485b3592f0af4d} [ 52 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:37:12.519 [DEBU] {90c931be7cb8371771810e5b23772d40} [ 19 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 20:37:12.536 [DEBU] {90c931be7cb8371771810e5b23772d40} [ 16 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:39:18.840 [DEBU] {b0f130279ab8371791680e393bb44101} [ 25 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 20:39:18.861 [DEBU] {b0f130279ab8371791680e393bb44101} [ 20 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:39:29.297 [DEBU] {18e044979cb837172dbe715d947eb210} [ 13 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 20:39:29.311 [DEBU] {18e044979cb837172dbe715d947eb210} [ 13 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-06 20:40:42.625 [DEBU] {50ab8ca9adb837178e05523b07ca946b} [ 18 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-06 20:40:42.640 [DEBU] {50ab8ca9adb837178e05523b07ca946b} [ 13 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
