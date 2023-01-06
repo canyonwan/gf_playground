@@ -22,7 +22,7 @@ func (sl *sLogin) Login(ctx context.Context, in model.LoginInput) error {
 	accountInfo := entity.AccountInfo{}
 	err := dao.AccountInfo.Ctx(ctx).Where("account", in.Account).Scan(&accountInfo)
 	if err != nil {
-		return err
+		return gerror.New("请输入正确的帐号")
 	}
 	// 如果通过帐号查到了, 说明加密盐也能查到
 	// if 加密后的不等于DB里的密码,则不对
@@ -32,6 +32,13 @@ func (sl *sLogin) Login(ctx context.Context, in model.LoginInput) error {
 	if err := service.Session().SetUser(ctx, &accountInfo); err != nil {
 		return err
 	}
+	service.BizCtx().SetUser(ctx, &model.ContextUser{
+		Id:           uint(accountInfo.Id),
+		Account:      accountInfo.Account,
+		UserName:     accountInfo.Account + "的用户名",
+		Avatar:       "https://avatars.githubusercontent.com/u/17877692?v=4",
+		IsSuperAdmin: uint8(accountInfo.IsSuperAdmin),
+	})
 
 	return nil
 }
