@@ -9,5 +9,5 @@ type LoginReq struct {
 }
 
 type LoginRes struct {
-	Info string `json:"info"`
+	Info interface{} `json:"info"`
 }
