@@ -29,6 +29,7 @@ func (sl *sLogin) Login(ctx context.Context, in model.LoginInput) error {
 	if utility.EncryptPassword(in.Password, accountInfo.UserSalt) != accountInfo.Password {
 		return gerror.New("帐号或密码错误")
 	}
+
 	if err := service.Session().SetUser(ctx, &accountInfo); err != nil {
 		return err
 	}
