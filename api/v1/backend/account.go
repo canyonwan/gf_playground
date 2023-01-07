@@ -48,3 +48,5 @@ type AccountDeleteReq struct {
 type AccountDeleteRes struct {
 	Id int `json:"id" dc:"管理员Id"`
 }
+
+// TODO 获取帐号信息的接口
