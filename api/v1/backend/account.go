@@ -14,7 +14,7 @@ type AccountBase struct {
 
 // AccountPageReq 分页
 type AccountPageReq struct {
-	g.Meta `path:"backend/account" method:"get" tags:"帐号管理"  summary:"分页"`
+	g.Meta `path:"backend/account" method:"get" tags:"帐号管理" summary:"分页"`
 	common.PageCommonReq
 }
 type AccountPageRes struct {
