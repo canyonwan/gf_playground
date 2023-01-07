@@ -9,5 +9,10 @@ type LoginReq struct {
 }
 
 type LoginRes struct {
-	Info interface{} `json:"info"`
+	Type         string `json:"type"`
+	Token        string `json:"token"`
+	ExpireIn     int    `json:"expire_in"`
+	IsSuperAdmin int    `json:"is_admin"` //是否超管
+	RoleIds      string `json:"role_ids"` //角色
+	//Permissions []entity.PermissionInfo `json:"permissions"` //权限列表
 }
