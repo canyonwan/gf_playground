@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"gf_playground/internal/consts"
 	"gf_playground/internal/service"
 	"github.com/goflyfox/gtoken/gtoken"
 
@@ -32,9 +33,9 @@ var (
 			gfToken := gtoken.GfToken{
 				ServerName:       "gf_shop_demo",
 				MultiLogin:       true,
-				LoginPath:        "/backend/login",
+				LoginPath:        consts.LoginPath,
+				LogoutPath:       consts.LogoutPath,
 				LoginBeforeFunc:  loginFunc,
-				LogoutPath:       "/backend/logout",
 				AuthExcludePaths: g.SliceStr{"/backend/login", "/backend/logout"}, // 不拦截白名单
 			}
 
