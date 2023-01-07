@@ -23,3 +23,20 @@ database:
     stdout:  true
     Path: "resource/log/sql"
 
+# Redis 配置示例
+redis:
+  default:
+    address: 127.0.0.1:6379
+    db: 1
+    pass: 123456
+    idleTimeout: 600
+
+# 七牛云
+qiniu:
+  bucket: "xxx"
+  accessKey: "x"
+  secretKey: "x"
+  url: "http://xx.dayu.club/"
+
+upload:
+  path: "upload"
