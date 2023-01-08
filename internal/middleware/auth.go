@@ -75,6 +75,11 @@ func AuthAfterFunc(r *ghttp.Request, respData gtoken.Resp) {
 		response.Auth(r)
 		return
 	}
+	// 没有该帐号或已被拉黑
+	if adminInfo.DeletedAt != nil {
+		response.AuthBlack(r)
+		return
+	}
 	r.SetCtxVar(consts.CtxAdminId, adminInfo.Id)
 	r.SetCtxVar(consts.CtxAdminAccount, adminInfo.Account)
 	r.SetCtxVar(consts.CtxAdminIsSuperAdmin, adminInfo.IsSuperAdmin)
