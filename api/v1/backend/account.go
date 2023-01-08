@@ -49,4 +49,14 @@ type AccountDeleteRes struct {
 	Id int `json:"id" dc:"管理员Id"`
 }
 
-// TODO 获取帐号信息的接口
+// AccountInfoReq 获取帐号信息的接口
+type AccountInfoReq struct {
+	g.Meta `path:"backend/account/info/{id}" method:"get" tags:"帐号管理" summary:"帐号详情"`
+	Id     int `json:"id" dc:"帐号Id"`
+}
+type AccountInfoRes struct {
+	Id           int    `json:"id" dc:"帐号Id"`
+	Account      string `json:"account" dc:"帐号"`
+	IsSuperAdmin int    `json:"isSuperAdmin" dc:"是否超级管理员"`
+	RoleIds      string `json:"roleIds" dc:"角色Ids"`
+}
