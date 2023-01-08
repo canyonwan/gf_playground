@@ -4,7 +4,7 @@ import "github.com/gogf/gf/v2/frame/g"
 
 // DataStatisticsGetReq 统计数据 统计图头部数据
 type DataStatisticsGetReq struct {
-	g.Meta `path:"backend/dataStatistics" method:"get" tags:"数据统计" summary:"详情"`
+	g.Meta `path:"/dataStatistics" method:"get" tags:"数据统计" summary:"详情"`
 }
 
 type DataStatisticsGetRes struct {

@@ -2,7 +2,6 @@ package banner
 
 import (
 	"context"
-	"fmt"
 	"gf_playground/internal/dao"
 	"gf_playground/internal/model"
 	"gf_playground/internal/service"
@@ -56,8 +55,7 @@ func (s *sBanner) GetSingle(ctx context.Context, in model.BannerGetInput) (out *
 func (s *sBanner) DeleteSingle(ctx context.Context, id int) error {
 	return dao.Banner.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 		a := g.Map{dao.Banner.Columns().Id: id}
-		fmt.Println("删除单个:%V", a)
-		_, err := dao.Banner.Ctx(ctx).Where(a).Delete()
+		_, err := dao.Banner.Ctx(ctx).Where(a).Unscoped().Delete()
 		return err
 	})
 }

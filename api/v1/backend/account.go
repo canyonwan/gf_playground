@@ -14,7 +14,7 @@ type AccountBase struct {
 
 // AccountPageReq 分页
 type AccountPageReq struct {
-	g.Meta `path:"backend/account" method:"get" tags:"帐号管理" summary:"分页"`
+	g.Meta `path:"/account" method:"get" tags:"帐号管理" summary:"分页"`
 	common.PageCommonReq
 }
 type AccountPageRes struct {
@@ -23,7 +23,7 @@ type AccountPageRes struct {
 
 // AccountCreateReq 新增
 type AccountCreateReq struct {
-	g.Meta `path:"backend/account" method:"POST" tags:"帐号管理" summary:"创建" `
+	g.Meta `path:"/account" method:"POST" tags:"帐号管理" summary:"创建" `
 	AccountBase
 }
 type AccountCreateRes struct {
@@ -32,7 +32,7 @@ type AccountCreateRes struct {
 
 // AccountUpdateReq 编辑
 type AccountUpdateReq struct {
-	g.Meta `path:"backend/account" method:"put" tags:"帐号管理" summary:"编辑"`
+	g.Meta `path:"/account" method:"put" tags:"帐号管理" summary:"编辑"`
 	Id     int `json:"id"`
 	AccountBase
 }
@@ -42,7 +42,7 @@ type AccountUpdateRes struct {
 
 // AccountDeleteReq 删除
 type AccountDeleteReq struct {
-	g.Meta `path:"backend/account/{id}" in:"path" method:"delete" tags:"帐号管理" summary:"删除" `
+	g.Meta `path:"/account/{id}" in:"path" method:"delete" tags:"帐号管理" summary:"删除" `
 	Id     int `json:"id" dc:"管理员Id"`
 }
 type AccountDeleteRes struct {
@@ -51,7 +51,7 @@ type AccountDeleteRes struct {
 
 // AccountInfoReq 获取帐号信息的接口
 type AccountInfoReq struct {
-	g.Meta `path:"backend/account/info/{id}" method:"get" tags:"帐号管理" summary:"帐号详情"`
+	g.Meta `path:"/account/info/{id}" method:"get" tags:"帐号管理" summary:"帐号详情"`
 	Id     int `json:"id" dc:"帐号Id"`
 }
 type AccountInfoRes struct {

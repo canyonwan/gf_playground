@@ -23,7 +23,7 @@ type TodoReqBase struct {
 
 // TodoPageGetReq 列表分页req
 type TodoPageGetReq struct {
-	g.Meta `path:"frontend/todo/page" method:"get" tags:"待办事项" summary:"分页列表"`
+	g.Meta `path:"/todo/page" method:"get" tags:"待办事项" summary:"分页列表"`
 	common.PageCommonReq
 }
 
@@ -34,7 +34,7 @@ type TodoPageGetRes struct {
 
 // TodoListGetReq 不分页 列表
 type TodoListGetReq struct {
-	g.Meta `path:"frontend/todo/list" method:"get" tags:"待办事项" summary:"列表"`
+	g.Meta `path:"/todo/list" method:"get" tags:"待办事项" summary:"列表"`
 }
 type TodoListGetRes struct {
 	List interface{} `json:"list" dc:"列表"`
@@ -42,7 +42,7 @@ type TodoListGetRes struct {
 
 // TodoCreateReq 新增
 type TodoCreateReq struct {
-	g.Meta `path:"frontend/todo" method:"post" tags:"待办事项" summary:"新增"`
+	g.Meta `path:"/todo" method:"post" tags:"待办事项" summary:"新增"`
 	TodoReqBase
 }
 type TodoCreateRes struct {
@@ -51,7 +51,7 @@ type TodoCreateRes struct {
 
 // TodoUpdateReq 编辑
 type TodoUpdateReq struct {
-	g.Meta `path:"frontend/todo" method:"put" tags:"待办事项" summary:"编辑"`
+	g.Meta `path:"/todo" method:"put" tags:"待办事项" summary:"编辑"`
 	Id     int `json:"id" dc:"id" v:"required#id不能为空"`
 	TodoReqBase
 }
@@ -61,7 +61,7 @@ type TodoUpdateRes struct {
 
 // TodoDeleteReq 删除
 type TodoDeleteReq struct {
-	g.Meta `path:"frontend/todo/{id}" in:"path" method:"delete" tags:"待办事项" summary:"删除"`
+	g.Meta `path:"/todo/{id}" in:"path" method:"delete" tags:"待办事项" summary:"删除"`
 	Id     int `json:"id" v:"required#id不能为空" dc:"Todo Id" `
 }
 type TodoDeleteRes struct{}
