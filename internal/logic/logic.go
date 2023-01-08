@@ -12,6 +12,7 @@ import (
 	_ "gf_playground/internal/logic/login"
 	_ "gf_playground/internal/logic/middleware"
 	_ "gf_playground/internal/logic/position"
+	_ "gf_playground/internal/logic/role"
 	_ "gf_playground/internal/logic/session"
 	_ "gf_playground/internal/logic/todo"
 )

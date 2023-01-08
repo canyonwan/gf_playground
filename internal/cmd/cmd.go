@@ -75,6 +75,7 @@ var (
 						backend.DataStatistics,
 						backend.Position,
 						backend.Account,
+						backend.Role,
 					)
 
 				})
