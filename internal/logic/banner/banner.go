@@ -59,3 +59,13 @@ func (s *sBanner) DeleteSingle(ctx context.Context, id int) error {
 		return err
 	})
 }
+
+// GetList 前端获取banner列表
+func (s *sBanner) GetList(ctx context.Context) (out *model.BannerListOutput, err error) {
+	var output []model.BannerGetOutput
+	err = dao.Banner.Ctx(ctx).OrderDesc(dao.Banner.Columns().Sort).Limit(4).Scan(&output)
+	if err != nil {
+		return nil, err
+	}
+	return &model.BannerListOutput{List: output}, nil
+}
