@@ -59,13 +59,14 @@ func dataReturn(r *ghttp.Request, code int, req ...interface{}) *JsonRes {
 
 // Auth 认证失败
 func Auth(r *ghttp.Request) {
-	res := dataReturn(r, 999, "请登录")
+	res := dataReturn(r, 401, "请登录")
 	r.Response.WriteJsonExit(res)
 }
 
 // AuthBlack Auth 认证失败 被冻结拉黑
 func AuthBlack(r *ghttp.Request) {
-	res := dataReturn(r, 888, "您的账号被冻结拉黑，请联系管理员")
+	//res := dataReturn(r, 403, "您的账号被冻结拉黑，请联系管理员")
+	res := dataReturn(r, 403, "没有查询到该帐号")
 	r.Response.WriteJsonExit(res)
 }
 
@@ -79,7 +80,6 @@ func JsonRedirect(r *ghttp.Request, code int, message, redirect string, data ...
 		Code:    code,
 		Message: message,
 		Data:    responseData,
-		//Redirect: redirect,
 	})
 }
 
