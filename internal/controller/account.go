@@ -74,3 +74,18 @@ func (ca *cAccount) Delete(ctx context.Context, req *backend.AccountDeleteReq) (
 	}
 	return &backend.AccountDeleteRes{Id: out.Id}, nil
 }
+
+func (ca *cAccount) Info(ctx context.Context, req *backend.AccountInfoReq) (res *backend.AccountInfoRes, err error) {
+	info, err := service.Account().Info(ctx, model.AccountInfoInput{
+		Id: req.Id,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &backend.AccountInfoRes{
+		Id:           info.Id,
+		Account:      info.Account,
+		IsSuperAdmin: info.IsSuperAdmin,
+		RoleIds:      info.RoleIds,
+	}, nil
+}
