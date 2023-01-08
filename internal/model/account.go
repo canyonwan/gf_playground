@@ -44,3 +44,14 @@ type AccountUpdateInput struct {
 type AccountUpdateOutput struct {
 	Id int `json:"id"`
 }
+
+// AccountInfoInput 帐号信息详情
+type AccountInfoInput struct {
+	Id int `json:"id"`
+}
+type AccountInfoOutput struct {
+	Id           int    `json:"id"`
+	Account      string `json:"account" dc:"帐号"`
+	IsSuperAdmin int    `json:"isSuperAdmin" dc:"是否超级管理员"`
+	RoleIds      string `json:"roleIds" dc:"角色Ids"`
+}

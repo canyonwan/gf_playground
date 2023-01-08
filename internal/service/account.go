@@ -16,6 +16,7 @@ type (
 		Create(ctx context.Context, in model.AccountCreateInput) (out model.AccountCreateOutput, err error)
 		Update(ctx context.Context, in model.AccountUpdateInput) (out *model.AccountUpdateOutput, err error)
 		Delete(ctx context.Context, in model.AccountDeleteInput) (out *model.AccountDeleteOutput, err error)
+		Info(ctx context.Context, in model.AccountInfoInput) (out *model.AccountInfoOutput, err error)
 	}
 )
 

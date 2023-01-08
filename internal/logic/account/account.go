@@ -82,3 +82,11 @@ func (sa *sAccount) Delete(ctx context.Context, in model.AccountDeleteInput) (ou
 	}
 	return &model.AccountDeleteOutput{Id: in.Id}, nil
 }
+
+func (sa *sAccount) Info(ctx context.Context, in model.AccountInfoInput) (out *model.AccountInfoOutput, err error) {
+	out = &model.AccountInfoOutput{}
+	if err = dao.AccountInfo.Ctx(ctx).Where(dao.AccountInfo.Columns().Id, in.Id).Scan(out); err != nil {
+		return nil, err
+	}
+	return
+}
