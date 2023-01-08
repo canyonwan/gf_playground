@@ -14,7 +14,7 @@ type RoleInfo struct {
 	g.Meta    `orm:"table:role_info, do:true"`
 	Id        interface{} // ID
 	RoleName  interface{} // 角色名
-	Desc      interface{} // 角色描述
+	RoleDesc  interface{} // 角色描述
 	CreatedAt *gtime.Time // 创建时间
 	UpdatedAt *gtime.Time // 更新时间
 	DeletedAt *gtime.Time // 删除时间

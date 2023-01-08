@@ -12,7 +12,7 @@ import (
 type RoleInfo struct {
 	Id        int         `json:"id"        description:"ID"`   // ID
 	RoleName  string      `json:"roleName"  description:"角色名"`  // 角色名
-	Desc      string      `json:"desc"      description:"角色描述"` // 角色描述
+	RoleDesc  string      `json:"roleDesc"  description:"角色描述"` // 角色描述
 	CreatedAt *gtime.Time `json:"createdAt" description:"创建时间"` // 创建时间
 	UpdatedAt *gtime.Time `json:"updatedAt" description:"更新时间"` // 更新时间
 	DeletedAt *gtime.Time `json:"deletedAt" description:"删除时间"` // 删除时间
