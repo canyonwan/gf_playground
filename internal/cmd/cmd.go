@@ -3,7 +3,8 @@ package cmd
 import (
 	"context"
 	"gf_playground/internal/consts"
-	"gf_playground/internal/controller"
+	"gf_playground/internal/controller/backend"
+	"gf_playground/internal/controller/frontend"
 	"gf_playground/internal/middleware"
 	"gf_playground/internal/service"
 	"github.com/goflyfox/gtoken/gtoken"
@@ -29,30 +30,30 @@ var (
 
 			// 开启gfToken
 			gfAdminToken := gtoken.GfToken{
-				ServerName: "gf_admin_auth",
-				//CacheMode:       2,
-				MultiLogin:       true,
+				ServerName:       "gf_admin_auth",
+				CacheMode:        2,
+				MultiLogin:       false,
 				LoginPath:        consts.AdminLoginPath,
 				LoginBeforeFunc:  middleware.LoginBeforeAuth,
 				LoginAfterFunc:   middleware.LoginAfterAuth,
 				LogoutPath:       consts.AdminLogoutPath,
 				AuthFailMsg:      consts.AuthFailMsg,
 				AuthAfterFunc:    middleware.AuthAfterFunc,
-				AuthExcludePaths: g.SliceStr{"/backend/login"}, // 不拦截白名单
+				AuthExcludePaths: g.SliceStr{"/v1/backend/login"}, // 不拦截白名单1
 			}
 
 			// 小程序前端 gfToken
 			gfFrontendToken := gtoken.GfToken{
-				ServerName: "gf_frontend_auth",
-				//CacheMode:       2,
-				MultiLogin:       true,
+				ServerName:       "gf_frontend_auth",
+				CacheMode:        2,
+				MultiLogin:       false,
 				LoginPath:        consts.LoginPath,
 				LoginBeforeFunc:  middleware.LoginBeforeAuth,
 				LoginAfterFunc:   middleware.LoginAfterAuth,
 				LogoutPath:       consts.LogoutPath,
 				AuthFailMsg:      consts.AuthFailMsg,
 				AuthAfterFunc:    middleware.AuthAfterFunc,
-				AuthExcludePaths: g.SliceStr{}, // 不拦截白名单
+				AuthExcludePaths: g.SliceStr{"/v1/frontend/login"}, // 不拦截白名单1
 			}
 
 			s.Group("/v1", func(group *ghttp.RouterGroup) {
@@ -65,27 +66,29 @@ var (
 				// 后台管理 全部都需要登录的
 				group.Group("/backend", func(backendGroup *ghttp.RouterGroup) {
 					// 使用gfToken中间件
-					if err := gfAdminToken.Middleware(ctx, group); err != nil {
+					if err := gfAdminToken.Middleware(ctx, backendGroup); err != nil {
 						panic(err)
 					}
 
 					backendGroup.Bind(
-						controller.Banner,
-						controller.DataStatistics,
-						controller.Position,
-						controller.Account,
+						backend.Banner,
+						backend.DataStatistics,
+						backend.Position,
+						backend.Account,
 					)
 
 				})
 
 				// 小程序前端
 				group.Group("/frontend", func(frontendGroup *ghttp.RouterGroup) {
+					//frontend.BannerFrontend
+					frontendGroup.Bind(frontend.BannerFrontend)
 					// 使用gfToken中间件
-					if err := gfFrontendToken.Middleware(ctx, group); err != nil {
+					if err := gfFrontendToken.Middleware(ctx, frontendGroup); err != nil {
 						panic(err)
 					}
 					frontendGroup.Bind(
-						controller.Todo,
+						frontend.Todo,
 					)
 				})
 
