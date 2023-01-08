@@ -39,7 +39,7 @@ var (
 				LogoutPath:       consts.AdminLogoutPath,
 				AuthFailMsg:      consts.AuthFailMsg,
 				AuthAfterFunc:    middleware.AuthAfterFunc,
-				AuthExcludePaths: g.SliceStr{"/v1/backend/login"}, // 不拦截白名单1
+				AuthExcludePaths: g.SliceStr{"/v1/backend/login"}, // 不拦截白名单
 			}
 
 			// 小程序前端 gfToken
@@ -53,7 +53,7 @@ var (
 				LogoutPath:       consts.LogoutPath,
 				AuthFailMsg:      consts.AuthFailMsg,
 				AuthAfterFunc:    middleware.AuthAfterFunc,
-				AuthExcludePaths: g.SliceStr{"/v1/frontend/login"}, // 不拦截白名单1
+				AuthExcludePaths: g.SliceStr{"/v1/frontend/login"}, // 不拦截白名单
 			}
 
 			s.Group("/v1", func(group *ghttp.RouterGroup) {
