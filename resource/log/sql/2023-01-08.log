@@ -1,0 +1,206 @@
+2023-01-08 12:50:46.034 [DEBU] {88d1d2c0313c38170ba5db3acdf9748d} [ 80 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 12:50:46.066 [DEBU] {e06ec9c5313c38170ca5db3a44a9fde7} [ 29 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 12:50:46.085 [DEBU] {502f8dc7313c38170da5db3a36973d5b} [ 18 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 12:50:51.845 [DEBU] {d81c001f333c38170fa5db3a40cd5b46} [ 15 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 12:50:56.544 [DEBU] {f0bc7e37343c381711a5db3a5cfe3538} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 12:50:56.553 [DEBU] {f8fb1338343c381712a5db3aa7360d22} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 12:56:45.592 [DEBU] {60a00d7c853c3817e5ead3577dc21e79} [ 15 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 12:56:45.605 [DEBU] {08610d7d853c3817e6ead3570f74401e} [ 11 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 12:56:45.617 [DEBU] {e84bbf7d853c3817e7ead357ca0d226e} [ 11 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 12:56:57.431 [DEBU] {5867083d883c3817e8ead35761406591} [ 25 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`is_super_admin`,`role_ids` FROM `account_info` WHERE (`id`=16) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 12:58:22.471 [DEBU] {50ef99089c3c3817e9ead357257e392e} [ 46 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`is_super_admin`,`role_ids` FROM `account_info` WHERE (`id`=16) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:00:01.226 [DEBU] {4822aa06b33c3817193c4f6f7128eba4} [ 50 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 13:00:01.262 [DEBU] {a868dd09b33c38171a3c4f6fc15304c0} [ 32 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:00:14.424 [DEBU] {285e2c1ab63c38171c3c4f6fd93d2ece} [ 36 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:00:23.414 [DEBU] {08dcb530b83c38171e3c4f6f1c647dd1} [ 57 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:01:37.301 [DEBU] {b85c4366c93c3817e2d19c0228e2c877} [ 32 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 13:01:37.334 [DEBU] {d87f5368c93c3817e3d19c0205a95eed} [ 30 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:02:25.715 [DEBU] {48e593abd43c3817a1e7b45ecb769e4d} [ 38 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 13:02:25.748 [DEBU] {687a0eaed43c3817a2e7b45e75477f0b} [ 29 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:02:25.780 [DEBU] {98b30cb0d43c3817a3e7b45e582cfd74} [ 28 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:02:40.836 [DEBU] {28832430d83c3817a4e7b45e71c38f8d} [ 43 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`is_super_admin`,`role_ids` FROM `account_info` WHERE (`id`=16) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:04:05.705 [DEBU] {40db83f2eb3c38172f219c36dcb37e65} [ 54 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 13:04:05.740 [DEBU] {c031ebf5eb3c381730219c362b1e88ab} [ 32 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:04:05.773 [DEBU] {2039f0f7eb3c381731219c369f507c43} [ 31 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:04:23.310 [DEBU] {a835480df03c381732219c36924b0fbc} [ 27 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`is_super_admin`,`role_ids` FROM `account_info` WHERE (`id`=16) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 13:21:36.743 [DEBU] {e8c31b97d23d381733219c366302675f} [ 32 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`is_super_admin`,`role_ids` FROM `account_info` WHERE (`id`=16) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 16:45:09.372 [DEBU] {58fedb24fc483817f1a97118f7108a54} [ 16 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2023-01-08 16:45:09.388 [DEBU] {58fedb24fc483817f1a97118f7108a54} [ 15 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=1) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 16:52:00.150 [DEBU] {98c174c95b493817f3a97118e1b06bf4} [ 11 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=1) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 16:52:45.352 [DEBU] {b08dd24f66493817f4a971189a8c69f4} [  9 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] BEGIN
+2023-01-08 16:52:45.367 [DEBU] {b08dd24f66493817f4a971189a8c69f4} [ 15 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] UPDATE `banner` SET `deleted_at`='2023-01-08 16:52:45' WHERE (`id`=2) AND `deleted_at` IS NULL
+2023-01-08 16:52:45.370 [DEBU] {b08dd24f66493817f4a971189a8c69f4} [  3 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] COMMIT
+2023-01-08 16:53:26.409 [DEBU] {d05cc3de6f493817f5a97118df2fb6bc} [ 13 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=6) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 16:54:04.968 [DEBU] {68d824d978493817f6a97118a632f72e} [ 12 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=1) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 16:54:38.931 [DEBU] {90737bc180493817f7a97118d30195f5} [ 12 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=6) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 16:55:28.531 [DEBU] {90b5fb4d8c493817d9692f41b1d1cc31} [ 10 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] BEGIN
+2023-01-08 16:55:28.537 [DEBU] {90b5fb4d8c493817d9692f41b1d1cc31} [  5 ms] [default] [gf_db_demo] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `banner`
+2023-01-08 16:55:28.551 [DEBU] {90b5fb4d8c493817d9692f41b1d1cc31} [ 14 ms] [default] [gf_db_demo] [rows:1  ] [txid:1] DELETE FROM `banner` WHERE `id`=1
+2023-01-08 16:55:28.564 [DEBU] {90b5fb4d8c493817d9692f41b1d1cc31} [ 13 ms] [default] [gf_db_demo] [rows:0  ] [txid:1] COMMIT
+2023-01-08 16:55:35.139 [DEBU] {8074b7d78d493817da692f41a983bf0f} [ 13 ms] [default] [gf_db_demo] [rows:0  ] [txid:2] BEGIN
+2023-01-08 16:55:35.146 [DEBU] {8074b7d78d493817da692f41a983bf0f} [  6 ms] [default] [gf_db_demo] [rows:1  ] [txid:2] DELETE FROM `banner` WHERE `id`=3
+2023-01-08 16:55:35.153 [DEBU] {8074b7d78d493817da692f41a983bf0f} [  7 ms] [default] [gf_db_demo] [rows:0  ] [txid:2] COMMIT
+2023-01-08 16:55:37.468 [DEBU] {d098bc628e493817db692f411ca8d2ff} [  9 ms] [default] [gf_db_demo] [rows:0  ] [txid:3] BEGIN
+2023-01-08 16:55:37.473 [DEBU] {d098bc628e493817db692f411ca8d2ff} [  4 ms] [default] [gf_db_demo] [rows:1  ] [txid:3] DELETE FROM `banner` WHERE `id`=4
+2023-01-08 16:55:37.480 [DEBU] {d098bc628e493817db692f411ca8d2ff} [  7 ms] [default] [gf_db_demo] [rows:0  ] [txid:3] COMMIT
+2023-01-08 16:55:48.193 [DEBU] {a05d05e290493817dc692f41dff8f4ab} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=6) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 17:17:19.574 [DEBU] {40253c8ebd4a3817c4e97c2cc04d4407} [ 11 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 17:17:19.584 [DEBU] {80acfb8ebd4a3817c5e97c2c754afdcd} [  8 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 17:17:19.594 [DEBU] {90cd798fbd4a3817c6e97c2cb611e345} [ 10 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 17:18:46.673 [DEBU] {a83e96d5d14a3817c8e97c2c109345d6} [ 13 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2023-01-08 17:18:46.687 [DEBU] {a83e96d5d14a3817c8e97c2c109345d6} [ 14 ms] [default] [gf_db_demo] [rows:4  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
+2023-01-08 18:26:17.373 [DEBU] {380af4f5804e3817e014747d9811f457} [ 16 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 18:26:17.385 [DEBU] {18f60df7804e3817e114747d5dbf4126} [ 10 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 18:26:17.394 [DEBU] {a8b9a5f7804e3817e214747d14a9661e} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:03:52.896 [DEBU] {8094cc1d8e5038175203b96cf63c3e29} [ 12 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2023-01-08 19:03:52.923 [DEBU] {8094cc1d8e5038175203b96cf63c3e29} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=6) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:05:10.972 [DEBU] {38e88f4ba050381754a50066b6d85e8c} [ 10 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2023-01-08 19:05:10.981 [DEBU] {38e88f4ba050381754a50066b6d85e8c} [  8 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=6) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:06:09.492 [DEBU] {3897a6ebad50381755a500662cbd4fe7} [ 11 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=6) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:06:25.212 [DEBU] {f81ccd94b150381756a500667ceb4864} [  8 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=16) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:06:43.720 [DEBU] {786dd1e3b550381757a500669f0db3ae} [ 10 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=5) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:08:29.059 [DEBU] {3881596ace5038176de971444db8ce26} [ 12 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2023-01-08 19:08:29.072 [DEBU] {3881596ace5038176de971444db8ce26} [ 11 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=5) AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:21:41.592 [DEBU] {38cd3bf18651381783432f767bc4110e} [ 10 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 19:21:41.599 [DEBU] {60ddd0f18651381784432f7680826699} [  7 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:21:41.609 [DEBU] {d03643f28651381785432f765dd5385e} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:24:22.679 [DEBU] {2863eb72ac513817f9b5d123b91eb1a5} [  7 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 19:24:22.688 [DEBU] {a0de6573ac513817fab5d123f90125e3} [  8 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:24:22.696 [DEBU] {a08af073ac513817fbb5d123899ab07b} [  7 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:24:39.230 [DEBU] {f8ee2f4cb0513817fcb5d1233c26acf9} [ 27 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2023-01-08 19:24:39.239 [DEBU] {f8ee2f4cb0513817fcb5d1233c26acf9} [  9 ms] [default] [gf_db_demo] [rows:4  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
+2023-01-08 19:26:33.503 [DEBU] {807849e8ca513817cd8ff220f0423040} [ 13 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 19:26:33.516 [DEBU] {88311ee9ca513817ce8ff220d6985c5f} [ 12 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:26:33.536 [DEBU] {387155eaca513817cf8ff220c2795554} [ 12 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 19:26:43.207 [DEBU] {e8cfa42acd513817d18ff220bb8b51ff} [ 11 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2023-01-08 19:26:43.216 [DEBU] {e8cfa42acd513817d18ff220bb8b51ff} [  9 ms] [default] [gf_db_demo] [rows:4  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
+2023-01-08 19:27:06.546 [DEBU] {e82fb299d251381738e1300d174e2a96} [  8 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `todo`
+2023-01-08 19:27:06.554 [DEBU] {e82fb299d251381738e1300d174e2a96} [  8 ms] [default] [gf_db_demo] [rows:4  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
+2023-01-08 19:27:28.596 [DEBU] {082520bcd75138173ae1300d0e7c7d9c} [  7 ms] [default] [gf_db_demo] [rows:4  ] SELECT `id`,`title`,`content`,`created_at`,`updated_at`,`deleted_at` FROM `todo` WHERE `deleted_at` IS NULL ORDER BY `id` ASC
+2023-01-08 20:30:44.235 [DEBU] {a88097774b55381746233f5459d5bbbc} [ 41 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2023-01-08 20:30:44.244 [DEBU] {a88097774b55381746233f5459d5bbbc} [  8 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE `deleted_at` IS NULL ORDER BY `sort` ASC LIMIT 4
+2023-01-08 20:36:08.704 [DEBU] {2892a90597553817df078605c2899708} [ 11 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2023-01-08 20:36:08.712 [DEBU] {2892a90597553817df078605c2899708} [  7 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 4
+2023-01-08 20:37:24.350 [DEBU] {c0197ca2a8553817d8727331070f492f} [ 12 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2023-01-08 20:37:24.358 [DEBU] {c0197ca2a8553817d8727331070f492f} [  7 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 4
+2023-01-08 21:48:28.296 [DEBU] {a0c30a6989593817fbc8e0358b1e94d4} [ 20 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2023-01-08 21:48:28.314 [DEBU] {a0c30a6989593817fbc8e0358b1e94d4} [ 17 ms] [default] [gf_db_demo] [rows:3  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE `deleted_at` IS NULL ORDER BY `sort` DESC LIMIT 4
+2023-01-08 21:49:06.010 [DEBU] {d0f3603192593817fdc8e035799c7f98} [ 14 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 21:49:06.022 [DEBU] {986f3a3292593817fec8e0359aeb4c46} [ 11 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 21:49:06.042 [DEBU] {30375c3392593817ffc8e0356b18c4bb} [ 13 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 21:49:36.123 [DEBU] {406b3d349959381700c9e0354575c982} [  9 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `role_info`
+2023-01-08 21:49:36.132 [DEBU] {406b3d349959381700c9e0354575c982} [  8 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`role_name`,`desc`,`created_at`,`updated_at`,`deleted_at` FROM `role_info` WHERE `deleted_at` IS NULL LIMIT 0,10
+2023-01-08 21:50:29.289 [DEBU] {a8704e95a5593817febad5061460b4db} [ 12 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `account_info`
+2023-01-08 21:50:29.299 [DEBU] {28761396a5593817ffbad506841613bb} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`account`='test') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 21:50:29.314 [DEBU] {1052ea96a559381700bbd506a41c3c9b} [ 10 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`account`,`password`,`is_super_admin`,`role_ids`,`user_salt`,`created_at`,`updated_at`,`deleted_at` FROM `account_info` WHERE (`id`='16') AND `deleted_at` IS NULL LIMIT 1
+2023-01-08 21:50:52.031 [DEBU] {d0959ce0aa59381702bbd506bef1a986} [ 13 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `role_info`
+2023-01-08 21:50:52.042 [DEBU] {d0959ce0aa59381702bbd506bef1a986} [ 10 ms] [default] [gf_db_demo] [rows:0  ] SELECT `id`,`role_name`,`desc`,`created_at`,`updated_at`,`deleted_at` FROM `role_info` WHERE `deleted_at` IS NULL LIMIT 0,10
+2023-01-08 21:51:45.646 [DEBU] {b0e77e5bb759381703bbd506e0f7e90b} [ 24 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `role_info`(`created_at`,`updated_at`,`role_name`) VALUES('2023-01-08 21:51:45','2023-01-08 21:51:45','管理员') 
+2023-01-08 21:51:54.114 [DEBU] {e8435855b959381704bbd506ba94195e} [  8 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`role_name`,`desc`,`created_at`,`updated_at`,`deleted_at` FROM `role_info` WHERE `deleted_at` IS NULL LIMIT 0,10
+2023-01-08 21:51:54.131 [DEBU] {e8435855b959381704bbd506ba94195e} [ 16 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `role_info` WHERE `deleted_at` IS NULL
+2023-01-08 21:54:16.505 [DEBU] {60a3017cda5938170487cd5d502dbffb} [ 13 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `role_info`
+2023-01-08 21:54:16.523 [DEBU] {60a3017cda5938170487cd5d502dbffb} [ 17 ms] [default] [gf_db_demo] [rows:1  ] UPDATE `role_info` SET `updated_at`='2023-01-08 21:54:16',`role_name`='了由作设' WHERE (`id`=1) AND `deleted_at` IS NULL
+2023-01-08 21:56:13.394 [DEBU] {e8f1d8b2f55938170587cd5d96538e06} [ 19 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `role_info`(`updated_at`,`role_name`,`created_at`) VALUES('2023-01-08 21:56:13','管理员','2023-01-08 21:56:13') 
+2023-01-08 21:56:26.562 [DEBU] {180626c4f85938170687cd5df337bf3c} [ 14 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `role_info`(`updated_at`,`role_name`,`created_at`) VALUES('2023-01-08 21:56:26','管理员','2023-01-08 21:56:26') 
+2023-01-08 21:56:55.269 [DEBU] {a086f571ff5938170787cd5d10d97359} [ 27 ms] [default] [gf_db_demo] [rows:1  ] DELETE FROM `role_info` WHERE `id`=3
+2023-01-08 21:58:11.662 [DEBU] {d849003c115a381723af684efc2f435f} [ 16 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `role_info`
+2023-01-08 21:58:11.685 [DEBU] {d849003c115a381723af684efc2f435f} [ 22 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `role_info`(`role_desc`,`created_at`,`role_name`,`updated_at`) VALUES('我是管理员描述','2023-01-08 21:58:11','管理员','2023-01-08 21:58:11') 
+2023-01-08 22:03:05.484 [DEBU] {b831a3a5555a3817ba90574a4c55eebd} [  9 ms] [default] [gf_db_demo] [rows:6  ] SHOW FULL COLUMNS FROM `role_info`
+2023-01-08 22:03:05.498 [ERRO] {b831a3a5555a3817ba90574a4c55eebd} [ 12 ms] [default] [gf_db_demo] [rows:0  ] INSERT INTO `role_info`(`role_desc`,`created_at`,`role_name`,`updated_at`) VALUES('anim laborum elit minim Lorem','2023-01-08 22:03:05','管理员','2023-01-08 22:03:05') 
+Error: Error 1062: Duplicate entry '管理员' for key 'role_info.role_info_pk'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:674
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:135
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:451
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_insert.go:202
+8.  gf_playground/internal/logic/role.(*sRole).Create
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/role/role.go:19
+9.  gf_playground/internal/controller/backend.(*cRole).Create
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/controller/backend/role.go:18
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+16. gf_playground/internal/middleware.AuthAfterFunc
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/middleware/auth.go:87
+17. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/canyonwan/go/pkg/mod/github.com/goflyfox/gtoken@v1.5.7/gtoken/gtoken.go:130
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+19. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+20. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+21. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+22. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+23. gf_playground/internal/logic/middleware.(*sMiddleware).ResponseHandler
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/middleware/middleware.go:29
+24. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+25. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+26. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+27. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+28. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+29. gf_playground/internal/logic/middleware.(*sMiddleware).Ctx
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/middleware/middleware.go:74
+30. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+31. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+32. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+33. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+34. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+35. github.com/gogf/gf/v2/net/ghttp.MiddlewareCORS
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_cors.go:12
+36. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+37. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+38. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+39. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+40. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+41. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_tracing.go:78
+42. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:96
+43. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+44. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:95
+45. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+46. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+47. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_server_handler.go:132
+

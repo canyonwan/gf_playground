@@ -33,10 +33,10 @@ redis:
 
 # 七牛云
 qiniu:
-  bucket: "xxx"
-  accessKey: "x"
-  secretKey: "x"
-  url: "http://xx.dayu.club/"
+  bucket: "gf-test-bucket"
+  accessKey: "CTFY_7bnK-XZkFK8P7RGSoQYBMcMB2eE4cfO-OAx"
+  secretKey: "6P2FEBD24B5l6XR-VVm3kBOi5RBJ1sL-q8nPgNsN"
+  url: "http://www.canyonwan.top"
 
 upload:
   path: "upload"
