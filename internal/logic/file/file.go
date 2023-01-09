@@ -11,10 +11,12 @@ import (
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/frame/g"
 	"github.com/gogf/gf/v2/os/gfile"
+	"github.com/gogf/gf/v2/os/glog"
 	"github.com/gogf/gf/v2/os/gtime"
 	"github.com/gogf/gf/v2/util/gconv"
 	"github.com/qiniu/go-sdk/v7/auth/qbox"
 	"github.com/qiniu/go-sdk/v7/storage"
+	"os"
 	"time"
 )
 
@@ -50,13 +52,19 @@ func (sf *sFile) Upload(ctx context.Context, in model.FileUploadInput) (out *mod
 	dateDirName := gtime.Now().Format("Ymd")
 	// gfile.Join 拼接路径(upload/20220516/xxx.jpg)
 	fileName, err := in.File.Save(gfile.Join(uploadPath, dateDirName))
+	localFile := fmt.Sprintf("%s/%s/%s", uploadPath, dateDirName, fileName) // todo 应该和gfile.Join()效果一样
+	if err != nil {
+		return nil, err
+	}
+
+	fileKey, err := uploadToQiniu(ctx, localFile, fileName)
 	if err != nil {
 		return nil, err
 	}
 
 	data := entity.FileInfo{
 		FileName:     fileName,
-		FileUrl:      fmt.Sprintf("%s/%s/%s", uploadPath, dateDirName, fileName), // todo 应该和gfile.Join()效果一样
+		FileUrl:      fileKey,
 		FileType:     1,
 		FileTypeName: "图片",
 		FileSize:     0,
@@ -67,11 +75,11 @@ func (sf *sFile) Upload(ctx context.Context, in model.FileUploadInput) (out *mod
 	if err != nil {
 		return nil, err
 	}
-	uploadToQiniu(ctx, data.FileUrl, data.FileName)
+
 	return &model.FileUploadOutput{
 		Id:           uint(id),
 		UserId:       uint(data.UserId),
-		FileUrl:      data.FileUrl,
+		FileUrl:      fileKey, // g.Cfg().MustGet(ctx, "qiniu.url").String() 这里不返回了,由前端拼接域名
 		FileName:     data.FileName,
 		FileSize:     data.FileSize,
 		FileType:     int16(data.FileType),
@@ -80,7 +88,7 @@ func (sf *sFile) Upload(ctx context.Context, in model.FileUploadInput) (out *mod
 }
 
 // 上传到七牛云
-func uploadToQiniu(ctx context.Context, localFile, fileName string) {
+func uploadToQiniu(ctx context.Context, localFile, fileName string) (fileKey string, err error) {
 	ak := g.Cfg().MustGet(ctx, "qiniu.accessKey").String()
 	sk := g.Cfg().MustGet(ctx, "qiniu.secretKey").String()
 	bucket := g.Cfg().MustGet(ctx, "qiniu.bucket").String()
@@ -94,22 +102,16 @@ func uploadToQiniu(ctx context.Context, localFile, fileName string) {
 	cfg := storage.Config{}
 	ret := storage.PutRet{}
 
-	//res := &model.FileUploadOutput{
-	//	Id:           0,
-	//	UserId:       0,
-	//	FileUrl:      "",
-	//	FileName:     "",
-	//	FileSize:     0,
-	//	FileType:     0,
-	//	FileTypeName: "",
-	//	CreatedAt:    nil,
-	//	UpdatedAt:    nil,
-	//}
 	formUploader := storage.NewFormUploader(&cfg)
-	err := formUploader.PutFile(context.Background(), &ret, upToken, fileName, localFile, nil)
+	err = formUploader.PutFile(context.Background(), &ret, upToken, fileName, localFile, nil)
 	if err != nil {
-		fmt.Println(err)
-		return
+		return "", err
 	}
-	g.Dump("上传成功: ", ret)
+	g.Dump("上传成功: ", ret.Key)
+	// 上传成功与失败都要删除本地文件
+	err = os.Remove(localFile)
+	if err != nil {
+		glog.Error(ctx, "删除本地文件失败: %s", err)
+	}
+	return ret.Key, nil
 }
