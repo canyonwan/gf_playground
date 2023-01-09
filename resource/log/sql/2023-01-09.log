@@ -1,0 +1,113 @@
+2023-01-09 15:11:09.860 [DEBU] {287e00a86f923817b9fb8c0df7193703} [ 21 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `file_info`
+2023-01-09 15:11:09.875 [DEBU] {287e00a86f923817b9fb8c0df7193703} [ 14 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `file_info` WHERE (`user_id`=16) AND (`created_at` >= '2023-01-09 15:10:09')
+2023-01-09 15:11:09.890 [DEBU] {287e00a86f923817b9fb8c0df7193703} [ 13 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `file_info`(`updated_at`,`file_type_name`,`file_type`,`user_id`,`created_at`,`file_url`,`file_name`) VALUES('2023-01-09 15:11:09','图片',1,16,'2023-01-09 15:11:09','upload/20230109/4ff7bb899e66b54336146c3ae447ab30d28696e433f98-w1S7nC_fw658.webp','4ff7bb899e66b54336146c3ae447ab30d28696e433f98-w1S7nC_fw658.webp') 
+2023-01-09 15:11:49.439 [DEBU] {18b1cedf78923817bafb8c0d7ec4fe23} [ 16 ms] [default] [gf_db_demo] [rows:7  ] SHOW FULL COLUMNS FROM `banner`
+2023-01-09 15:11:49.448 [DEBU] {18b1cedf78923817bafb8c0d7ec4fe23} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT `id`,`url`,`jump_link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `banner` WHERE (`id`=5) AND `deleted_at` IS NULL LIMIT 1
+2023-01-09 15:18:14.486 [DEBU] {082b7886d2923817c4cc415363372f00} [ 14 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `file_info`
+2023-01-09 15:18:14.496 [DEBU] {082b7886d2923817c4cc415363372f00} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `file_info` WHERE (`user_id`=16) AND (`created_at` >= '2023-01-09 15:17:14')
+2023-01-09 15:18:14.510 [DEBU] {082b7886d2923817c4cc415363372f00} [ 13 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `file_info`(`file_type_name`,`file_name`,`file_type`,`updated_at`,`user_id`,`file_url`,`created_at`) VALUES('图片','4ff7bb899e66b54336146c3ae447ab30d28696e433f98-w1S7nC_fw658.webp',1,'2023-01-09 15:18:14',16,'upload/20230109/4ff7bb899e66b54336146c3ae447ab30d28696e433f98-w1S7nC_fw658.webp','2023-01-09 15:18:14') 
+2023-01-09 15:20:12.988 [DEBU] {50573c1eee923817c5cc4153779b2e41} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `file_info` WHERE (`user_id`=16) AND (`created_at` >= '2023-01-09 15:19:12')
+2023-01-09 15:20:13.039 [ERRO] {50573c1eee923817c5cc4153779b2e41} [ 49 ms] [default] [gf_db_demo] [rows:0  ] INSERT INTO `file_info`(`file_url`,`updated_at`,`file_type`,`user_id`,`created_at`,`file_type_name`,`file_name`) VALUES('upload/20230109/4ff7bb899e66b54336146c3ae447ab30d28696e433f98-w1S7nC_fw658.webp','2023-01-09 15:20:12',1,16,'2023-01-09 15:20:12','图片','4ff7bb899e66b54336146c3ae447ab30d28696e433f98-w1S7nC_fw658.webp') 
+Error: Error 1062: Duplicate entry 'upload/20230109/4ff7bb899e66b54336146c3ae447ab30d28696e433f98-w1' for key 'file_info.file_info_pk'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:674
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core_underlying.go:135
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_core.go:451
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/database/gdb/gdb_model_insert.go:202
+8.  gf_playground/internal/logic/file.(*sFile).Upload
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/file/file.go:64
+9.  gf_playground/internal/controller/backend.(*cFile).Upload
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/controller/backend/file.go:15
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+16. gf_playground/internal/middleware.AuthAfterFunc
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/middleware/auth.go:87
+17. github.com/goflyfox/gtoken/gtoken.(*GfToken).authMiddleware
+    /Users/canyonwan/go/pkg/mod/github.com/goflyfox/gtoken@v1.5.7/gtoken/gtoken.go:130
+18. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+19. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+20. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+21. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+22. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+23. gf_playground/internal/logic/middleware.(*sMiddleware).ResponseHandler
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/middleware/middleware.go:29
+24. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+25. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+26. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+27. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+28. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+29. gf_playground/internal/logic/middleware.(*sMiddleware).Ctx
+    /Users/canyonwan/Documents/canyonwan/go-projects/gf_playground/internal/logic/middleware/middleware.go:74
+30. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+31. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+32. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+33. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+34. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+35. github.com/gogf/gf/v2/net/ghttp.MiddlewareCORS
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_cors.go:12
+36. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:55
+37. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+38. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:54
+39. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+40. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+41. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_middleware_tracing.go:78
+42. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:96
+43. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_func.go:55
+44. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:95
+45. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/util/gutil/gutil.go:56
+46. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_request_middleware.go:49
+47. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/canyonwan/go/pkg/mod/github.com/gogf/gf/v2@v2.2.2/net/ghttp/ghttp_server_handler.go:132
+
+2023-01-09 15:57:12.149 [DEBU] {d826edcdf294381742492517f2a90056} [ 14 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `file_info`
+2023-01-09 15:57:12.159 [DEBU] {d826edcdf294381742492517f2a90056} [  9 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `file_info` WHERE (`user_id`=16) AND (`created_at` >= '2023-01-09 15:56:12')
+2023-01-09 15:57:12.174 [DEBU] {d826edcdf294381742492517f2a90056} [ 13 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `file_info`(`file_url`,`user_id`,`created_at`,`file_name`,`file_type`,`file_type_name`,`updated_at`) VALUES('upload/20230109/tutu.jpg',16,'2023-01-09 15:57:12','tutu.jpg',1,'图片','2023-01-09 15:57:12') 
+2023-01-09 16:15:52.448 [DEBU] {f0aae7a4f7953817de04cf1478449ff2} [ 14 ms] [default] [gf_db_demo] [rows:9  ] SHOW FULL COLUMNS FROM `file_info`
+2023-01-09 16:15:52.456 [DEBU] {f0aae7a4f7953817de04cf1478449ff2} [  7 ms] [default] [gf_db_demo] [rows:1  ] SELECT COUNT(1) FROM `file_info` WHERE (`user_id`=16) AND (`created_at` >= '2023-01-09 16:14:52')
+2023-01-09 16:15:52.467 [DEBU] {f0aae7a4f7953817de04cf1478449ff2} [ 10 ms] [default] [gf_db_demo] [rows:1  ] INSERT INTO `file_info`(`file_type_name`,`file_url`,`user_id`,`updated_at`,`file_name`,`file_type`,`created_at`) VALUES('图片','upload/20230109/tutu.jpg',16,'2023-01-09 16:15:52','tutu.jpg',1,'2023-01-09 16:15:52') 
