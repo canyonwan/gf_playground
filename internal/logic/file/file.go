@@ -50,7 +50,7 @@ func (sf *sFile) Upload(ctx context.Context, in model.FileUploadInput) (out *mod
 	}
 
 	dateDirName := gtime.Now().Format("Ymd")
-	// gfile.Join 拼接路径(upload/20220516/xxx.jpg)
+	// gfile.Join 拼接路径(upload_temp/20220516/xxx.jpg)
 	fileName, err := in.File.Save(gfile.Join(uploadPath, dateDirName))
 	localFile := fmt.Sprintf("%s/%s/%s", uploadPath, dateDirName, fileName) // todo 应该和gfile.Join()效果一样
 	if err != nil {

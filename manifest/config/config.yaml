@@ -39,4 +39,4 @@ qiniu:
   url: "http://vms-file.canyonwan.top/"
 
 upload:
-  path: "upload"
+  path: "upload_temp"
