@@ -44,10 +44,10 @@ func LoginBeforeAuth(r *ghttp.Request) (string, interface{}) {
 // LoginAfterAuth 登录之后的操作
 func LoginAfterAuth(r *ghttp.Request, respData gtoken.Resp) {
 	if !respData.Success() {
-		respData.Code = 0
+		respData.Code = -1
 		r.Response.WriteJson(respData)
 	} else {
-		respData.Code = 1
+		respData.Code = 0
 		// 获得admin登录用户id
 		userKey := respData.GetString("userKey")
 		adminId := gstr.StrEx(userKey, consts.GTokenAdminPrefix)
