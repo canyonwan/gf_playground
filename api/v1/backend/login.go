@@ -1,6 +1,9 @@
 package backend
 
-import "github.com/gogf/gf/v2/frame/g"
+import (
+	"gf_playground/internal/model/entity"
+	"github.com/gogf/gf/v2/frame/g"
+)
 
 type LoginReq struct {
 	g.Meta   `path:"/login" method:"POST"  tags:"登录" summary:"登录"`
@@ -9,10 +12,17 @@ type LoginReq struct {
 }
 
 type LoginRes struct {
-	Type         string `json:"type"`
-	Token        string `json:"token"`
-	ExpireIn     int    `json:"expireIn"`
-	IsSuperAdmin int    `json:"isSuperAdmin"` //是否超管
-	RoleIds      string `json:"roleIds"`      //角色
-	//Permissions []entity.PermissionInfo `json:"permissions"` //权限列表
+	Type         string                  `json:"type"`
+	Token        string                  `json:"token"`
+	ExpireIn     int                     `json:"expireIn"`
+	IsSuperAdmin int                     `json:"isSuperAdmin"` // 是否超管
+	RoleIds      string                  `json:"roleIds"`      // 角色
+	Permissions  []entity.PermissionInfo `json:"permissions"`  // 权限列表
+}
+
+type LogoutReq struct {
+	g.Meta `path:"/logout" method:"post" summary:"登出"`
+}
+
+type LogoutRes struct {
 }
