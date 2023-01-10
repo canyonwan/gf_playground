@@ -76,6 +76,7 @@ var (
 						backend.Position,
 						backend.Account,
 						backend.Role,
+						backend.Permission,
 						backend.File,
 					)
 
