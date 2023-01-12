@@ -10,11 +10,11 @@ import (
 	_ "gf_playground/internal/logic/bizctx"
 	_ "gf_playground/internal/logic/data_statistics"
 	_ "gf_playground/internal/logic/file"
-	_ "gf_playground/internal/logic/login"
 	_ "gf_playground/internal/logic/middleware"
 	_ "gf_playground/internal/logic/permission"
 	_ "gf_playground/internal/logic/position"
 	_ "gf_playground/internal/logic/role"
 	_ "gf_playground/internal/logic/session"
 	_ "gf_playground/internal/logic/todo"
+	_ "gf_playground/internal/logic/user"
 )
