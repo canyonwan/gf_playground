@@ -34,7 +34,7 @@ var (
 				CacheMode:        2,
 				MultiLogin:       false,
 				LoginPath:        consts.AdminLoginPath,
-				LoginBeforeFunc:  middleware.LoginBeforeAuth,
+				LoginBeforeFunc:  middleware.Login,
 				LoginAfterFunc:   middleware.LoginAfterAuth,
 				LogoutPath:       consts.AdminLogoutPath,
 				AuthFailMsg:      consts.AuthFailMsg,
@@ -48,7 +48,7 @@ var (
 				CacheMode:        2,
 				MultiLogin:       false,
 				LoginPath:        consts.LoginPath,
-				LoginBeforeFunc:  middleware.LoginBeforeAuth,
+				LoginBeforeFunc:  middleware.Login,
 				LoginAfterFunc:   middleware.LoginAfterAuth,
 				LogoutPath:       consts.LogoutPath,
 				AuthFailMsg:      consts.AuthFailMsg,
@@ -59,7 +59,7 @@ var (
 			s.Group("/v1", func(group *ghttp.RouterGroup) {
 				group.Middleware(
 					ghttp.MiddlewareCORS,
-					service.Middleware().Ctx,
+					//service.Middleware().Ctx,
 					service.Middleware().ResponseHandler,
 				)
 
@@ -79,12 +79,10 @@ var (
 						backend.Permission,
 						backend.File,
 					)
-
 				})
 
 				// 小程序前端
 				group.Group("/frontend", func(frontendGroup *ghttp.RouterGroup) {
-					//frontend.BannerFrontend
 					frontendGroup.Bind(frontend.BannerFrontend)
 					// 使用gfToken中间件
 					if err := gfFrontendToken.Middleware(ctx, frontendGroup); err != nil {
