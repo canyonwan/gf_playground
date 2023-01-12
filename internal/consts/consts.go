@@ -13,4 +13,10 @@ const (
 	CtxAdminAccount          = "CtxAdminAccount"
 	CtxAdminIsSuperAdmin     = "CtxAdminIsSuperAdmin"
 	CtxAdminRoleIds          = "CtxAdminRoleIds"
+	CtxAdminPhone            = "CtxAdminPhone"
+	CtxAdminEmail            = "CtxAdminEmail"
+	CtxAdminUsername         = "CtxAdminUsername"
+	CtxAdminAvatar           = "CtxAdminAvatar"
+	CtxAdminGender           = "CtxAdminGender"
+	CtxAdminPermissions      = "CtxAdminPermissions"
 )
